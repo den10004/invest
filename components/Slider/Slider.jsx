@@ -14,6 +14,12 @@ export default function Slider(images) {
       }}
       modules={[Pagination]}
       className="mySwiper"
+      style={{
+        "--swiper-pagination-color": "rgb(255, 255, 255)",
+        "--swiper-pagination-bullet-inactive-color": "#999999",
+        "--swiper-pagination-bullet-inactive-opacity": "1",
+        "--swiper-pagination-bullet-size": "15px",
+      }}
     >
       {images.images.map((url) => (
         <SwiperSlide key={url}>
