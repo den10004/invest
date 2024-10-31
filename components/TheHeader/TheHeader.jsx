@@ -21,18 +21,6 @@ export default function TheHeader() {
           <span>Разместить проект</span>
         </button>
       </div>
-
-      <div className={styles.hero}>
-        <div id="hero">
-          <div className="container">
-            <h1>Каталог инвестиционных проектов</h1>
-            <h2>
-              Инвестируйте в действующие бизнесы или стартапы с доходностью от
-              15% до 50% годовых*
-            </h2>
-          </div>
-        </div>
-      </div>
     </header>
   );
 }
