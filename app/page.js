@@ -1,6 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Projects from "../components/Projects";
 
 export default function Home() {
-  return <div className={styles.page}>HomeHomeHome</div>;
+  return (
+    <div>
+      <Projects />
+    </div>
+  );
 }
