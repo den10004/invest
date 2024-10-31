@@ -7,7 +7,7 @@ const Navigation = ({ navLinks }) => {
   const pathname = usePathname();
 
   return (
-    <div className={[styles.flex, styles.header__nav]}>
+    <div className={styles.flex}>
       <div className={styles.nav__toggle}>
         <span></span>
         <span></span>
