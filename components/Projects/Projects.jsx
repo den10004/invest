@@ -1,18 +1,25 @@
-import { getProjects } from "@/lib/connect";
+"use client";
+
 import styles from "./page.module.css";
 import Slider from "../Slider/Slider";
-import { getPb } from "@/lib/pb";
-import { ProjectRender } from "./ProjectRender";
 
-export default async function Projects() {
-  const pb = await getPb();
-  const data = await getProjects();
+import ProjectRender from "./ProjectRender";
+import { useEffect, useState } from "react";
+
+export default function Projects() {
+  const [cards, setCards] = useState({});
+  let cardArr = cards.data;
+  let pbArr = cards.pb;
+
+  useEffect(() => {
+    ProjectRender().then(setCards);
+  }, [ProjectRender]);
 
   return (
     <div id="catalogue">
       <div className="container">
         <div className="items">
-          {data.map((p) => (
+          {cardArr?.map((p) => (
             <article className={styles.item} key={p.id}>
               <div className={styles.header}>
                 <div className={styles.title}>{p.title}</div>
@@ -23,7 +30,7 @@ export default async function Projects() {
                 <div className={styles.slider__wrap}>
                   <Slider
                     images={p.images.map((i) =>
-                      pb.files.getUrl(p, i, { thumb: "300x180" })
+                      pbArr.files.getUrl(p, i, { thumb: "300x180" })
                     )}
                   />
                 </div>
