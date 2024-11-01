@@ -1,7 +1,7 @@
 //import localFont from "next/font/local";
 import "./globals.css";
 import TheHeader from "@/components/TheHeader/TheHeader";
-import TheFooter from "@/components/TheFooter";
+import TheFooter from "@/components/TheFooter/TheFooter";
 import Head from "next/head";
 
 /*

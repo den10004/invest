@@ -1,24 +1,26 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
+import { SliderNavButtons } from "./SliderNavButtons";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import styles from "./page.module.css";
+import "./style.css";
 
 export default function Slider(images) {
   return (
     <Swiper
       pagination={{
-        dynamicBullets: true,
+        dynamicBullets: false,
+        clickable: true,
       }}
-      modules={[Pagination]}
+      modules={[Pagination, Navigation]}
       className="mySwiper"
       style={{
         "--swiper-pagination-color": "rgb(255, 255, 255)",
-        "--swiper-pagination-bullet-inactive-color": "#999999",
-        "--swiper-pagination-bullet-inactive-opacity": "1",
-        "--swiper-pagination-bullet-size": "15px",
+        "--swiper-pagination-bullet-inactive-color": "rgb(255, 255, 255)",
+        "--swiper-pagination-bullet-inactive-opacity": "0.3",
+        "--swiper-pagination-bullet-size": "10px",
       }}
     >
       {images.images.map((url) => (
@@ -26,6 +28,7 @@ export default function Slider(images) {
           <img src={url}></img>
         </SwiperSlide>
       ))}
+      <SliderNavButtons />
     </Swiper>
   );
 }
