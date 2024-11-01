@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import { SliderNavButtons } from "./SliderNavButtons";
+import { Suspense, lazy } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,6 +11,8 @@ import "./style.css";
 export default function Slider(images) {
   return (
     <Swiper
+      /*
+      watchOverflow={true}*/
       pagination={{
         dynamicBullets: false,
         clickable: true,
@@ -28,6 +31,7 @@ export default function Slider(images) {
           <img src={url}></img>
         </SwiperSlide>
       ))}
+
       <SliderNavButtons />
     </Swiper>
   );

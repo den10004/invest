@@ -2,6 +2,7 @@ import { getProjects } from "@/lib/connect";
 import styles from "./page.module.css";
 import Slider from "../Slider/Slider";
 import { getPb } from "@/lib/pb";
+import { ProjectRender } from "./ProjectRender";
 
 export default async function Projects() {
   const pb = await getPb();
@@ -11,7 +12,7 @@ export default async function Projects() {
     <div id="catalogue">
       <div className="container">
         <div className="items">
-          {data.items.map((p) => (
+          {data.map((p) => (
             <article className={styles.item} key={p.id}>
               <div className={styles.header}>
                 <div className={styles.title}>{p.title}</div>
