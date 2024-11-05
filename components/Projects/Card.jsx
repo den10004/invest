@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function Card({ p, pbArr }) {
   const { ref, inView } = useInView({
-    threshold: 1,
+    threshold: 0.2,
     triggerOnce: 1,
   });
 
@@ -51,7 +51,7 @@ export default function Card({ p, pbArr }) {
           </div>
         </>
       ) : (
-        <div>no</div>
+        <></>
       )}
     </article>
   );

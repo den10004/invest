@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 
 export default function Projects() {
-  const [cards, setCards] = useState({});
+  const [cards, setCards] = useState([]);
 
   let cardArr = cards.data;
   let pbArr = cards.pb;
@@ -23,6 +23,28 @@ export default function Projects() {
             const p = item.expand.project;
             return <Card p={p} pbArr={pbArr} key={p.id} />;
           })}
+
+          {cards.length === 0 && (
+            <div
+              style={{
+                display: "flex",
+                width: "100%",
+                height: "100vh",
+              }}
+            >
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  border: "5px solid #0b1e30",
+                  borderBottomColor: "transparent",
+                  borderRadius: "50%",
+                  margin: "150px auto 0 auto",
+                  animation: "rotation 1s linear infinite",
+                }}
+              ></div>
+            </div>
+          )}
         </div>
       </div>
     </div>
