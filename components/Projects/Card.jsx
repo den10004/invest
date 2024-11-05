@@ -4,8 +4,12 @@ import styles from "./page.module.css";
 import Slider from "../Slider/Slider";
 
 import { useInView } from "react-intersection-observer";
+import { useState } from "react";
+import Present from "../Modals/Present";
 
 export default function Card({ p, pbArr }) {
+  const [open, setOpen] = useState(false);
+
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: 1,
@@ -44,11 +48,12 @@ export default function Card({ p, pbArr }) {
               </li>
             </ul>
             <div className={styles.button}>
-              <button className="btn btn-yellow item-present">
+              <button className="btn btn-yellow" onClick={() => setOpen(true)}>
                 Получить презентацию
               </button>
             </div>
           </div>
+          <Present open={open} setOpen={setOpen} />
         </>
       ) : (
         <></>
