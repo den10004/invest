@@ -1,7 +1,6 @@
-"use client";
-
 import { useEffect } from "react";
 import "./index.css";
+import { getPb } from "@/lib/pb";
 
 export default function RequestModal({ setShowModal }) {
   useEffect(() => {
@@ -15,6 +14,32 @@ export default function RequestModal({ setShowModal }) {
     return () => document.removeEventListener("keydown", handleEscapeKey);
   }, []);
 
+  const datas = {
+    project: "RELATION_RECORD_ID",
+    name: "test",
+    phone: 123,
+    email: "test@example.com",
+    ip: "test",
+    browser: "test",
+    platform: "test",
+    utm_source: "test",
+    utm_medium: "test",
+    utm_campaign: "test",
+    utm_term: "test",
+    utm_content: "test",
+    utm_placement: "test",
+    utm_region_name: "test",
+  };
+
+  async function Record(event) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    console.log(formData);
+    const pb = await getPb();
+    const data = await pb.collection("orders").create(formData);
+    console.log(data);
+  }
+
   return (
     <>
       <div id="add-franch" className="modal_form">
@@ -26,6 +51,7 @@ export default function RequestModal({ setShowModal }) {
             action=""
             method="post"
             className="custom-form modal-form ajax_form"
+            onSubmit={Record}
           >
             <div className="modal-title">
               Отправьте заявку на размещение проекта
@@ -106,14 +132,6 @@ export default function RequestModal({ setShowModal }) {
               className="source"
               value="<?php echo isset($_GET['utm_mail']) ? $_GET['utm_mail'] : ''; ?>"
             />
-
-            <div
-              id="recaptcha2"
-              className="g-recaptcha"
-              data-sitekey="<? echo $public_key; ?>"
-              data-callback="onSubmit"
-              data-size="invisible"
-            ></div>
 
             <button id="captcha1" className="btn submit">
               Разместить проект

@@ -68,6 +68,16 @@ header .btn-yellow {
         font-size: 18px;
         justify-content: start;
     }
+
+    nav.flex a:not(:last-child):after {
+        content: "/";
+        /* display: inline-flex; */
+        position: relative;
+        right: 0;
+        top: 0;
+        padding-left: 5px;
+        padding-right: 11px;
+    }
 }
 
 @media screen and (max-width: 767px) {
