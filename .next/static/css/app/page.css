@@ -886,7 +886,7 @@ button.swiper-pagination-bullet {
     padding: 0;
     font-weight: 300;
     color: black;
-    display: none;
+    /* display: none;*/
     top: 10vh;
 }
 
@@ -1033,7 +1033,8 @@ form.custom-form select {
     top: 0;
     left: 0;
     cursor: pointer;
-    display: none;
+    /*
+    display: none;*/
 }
 
 .polit-descr a {
