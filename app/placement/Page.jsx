@@ -30,35 +30,32 @@ export default function Placement() {
         <div className="main-tr-box flex">
           <div className="main-tr-item">
             <div className="main-tr-item-img">
-              <img
-                src={icon.src}
-                className="main-img"
-                alt="публикация проектов"
-              />
+              <img src={icon.src} alt="заявки" />
               <div className="num-small">01</div>
             </div>
             <p>
               <strong>Бесплатная </strong>публикация ваших проектов
             </p>
           </div>
+
           <div className="main-tr-item">
             <div className="main-tr-item-img">
-              <img
-                src={icon2.src}
-                className="main-img"
-                alt="Оплата только за заявки"
-              />
+              <img src={icon2.src} alt="заявки" />
               <div className="num-small">02</div>
             </div>
-            <p>Оплата только за заявки</p>
+            <p>
+              <strong>Оплата </strong>
+              Оплата только за заявки
+            </p>
           </div>
+
           <div className="main-tr-item">
             <div className="main-tr-item-img">
               <img src={icon3.src} alt="заявки" />
               <div className="num-small">03</div>
             </div>
             <p>
-              <strong>Обмен</strong>
+              <strong>Обмен </strong>
               некачественных заявок
             </p>
           </div>

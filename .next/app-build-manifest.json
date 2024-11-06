@@ -12,21 +12,16 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/contacts/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/contacts/page.js"
-    ],
     "/placement/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/placement/page.css",
       "static/chunks/app/placement/page.js"
     ],
-    "/_not-found/page": [
+    "/contacts/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/contacts/page.js"
     ]
   }
 }
