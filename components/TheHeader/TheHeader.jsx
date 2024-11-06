@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import "./style.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import RequestModal from "../Modals/RequestModal";
 
 export default function TheHeader() {
@@ -12,22 +12,33 @@ export default function TheHeader() {
     { label: "Контакты", href: "/contacts" },
   ];
   const nav = useRef();
+  const navbtn = useRef();
   const [showModal, setShowModal] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
-  const [none, setNone] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth < 1171) {
+      navbtn.current.style.display = "none";
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  }, []);
 
   const showMenuOpen = () => {
-    console.log("asd");
+    nav.current.style.display = "flex";
+    navbtn.current.style.display = "block";
   };
 
   const closeMenuOpen = () => {
-    setShowMenu(fa);
+    nav.current.style.display = "none";
+    navbtn.current.style.display = "none";
   };
 
   return (
     <header className="header">
       <div className="wrap flex">
-        <div className="nav-toggle" onClick={() => showMenuOpen}>
+        <div className="nav-toggle" onClick={showMenuOpen}>
           <span></span>
           <span></span>
           <span></span>
@@ -38,7 +49,9 @@ export default function TheHeader() {
         </a>
 
         <nav className="flex header-nav" ref={nav}>
-          <span className="close-header">×</span>
+          <span className="close-header" ref={navbtn} onClick={closeMenuOpen}>
+            ×
+          </span>
           <Link href="/">Каталог инвестпроектов</Link>
           <Link href="/invest">Размещение проектов в каталоге</Link>
           <Link href="/contacts">Контакты</Link>
