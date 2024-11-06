@@ -1,8 +1,20 @@
 "use client";
 
+import { useEffect } from "react";
 import "./index.css";
 
 export default function RequestModal({ setShowModal }) {
+  useEffect(() => {
+    function handleEscapeKey(event) {
+      if (event.code === "Escape") {
+        setShowModal(false);
+      }
+    }
+
+    document.addEventListener("keydown", handleEscapeKey);
+    return () => document.removeEventListener("keydown", handleEscapeKey);
+  }, []);
+
   return (
     <>
       <div id="add-franch" className="modal_form">
@@ -107,8 +119,8 @@ export default function RequestModal({ setShowModal }) {
               Разместить проект
             </button>
             <div className="polit-descr">
-              Нажимая кнопку "Разместить проект", я подтверждаю, что ознакомлен
-              и согласен с условиями{" "}
+              Нажимая кнопку Разместить проект, я подтверждаю, что ознакомлен и
+              согласен с условиями{" "}
               <a href="" target="_blank" className="polit">
                 политики обработки персональных данных
               </a>

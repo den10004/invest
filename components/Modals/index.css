@@ -290,3 +290,13 @@ form fieldset.options .field input[type=radio] {
         font-size: 14px;
     }
 }
+
+.actives {
+    background-color: #56a7fb;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    color: #111;
+}

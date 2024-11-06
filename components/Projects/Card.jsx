@@ -63,7 +63,7 @@ export default function Card({ p, pbArr }) {
         )}
       </article>
 
-      {open && <PresentationModal setOpen={setOpen} />}
+      {open && <PresentationModal setOpen={setOpen} type={"presentation"} />}
     </>
   );
 }

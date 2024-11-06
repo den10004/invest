@@ -1,10 +1,14 @@
+"use client";
 import "./style.css";
 import phone from "@/public/phones.webp";
 import icon from "@/public/icon2.webp";
 import icon2 from "@/public/icon5.webp";
 import icon3 from "@/public/icon6.webp";
+import PresentationModal from "@/components/Modals/PresentationModal";
+import { useState } from "react";
 
 export default function placement() {
+  const [open, setOpen] = useState(false);
   return (
     <section id="main" className="shine">
       <div className="wrap" style={{ position: "relative" }}>
@@ -17,7 +21,10 @@ export default function placement() {
           Разместите свой проект в нашем каталоге и получайте целевые заявки от
           заинтересованных инвесторов
         </p>
-        <button className="btn btn-yellow big-btn btn-pdf-new openTafif">
+        <button
+          className="btn btn-yellow big-btn btn-pdf-new openTafif"
+          onClick={() => setOpen(true)}
+        >
           <i className="i-download-pdf"></i> Получить презентацию
         </button>
         <div className="main-tr-box flex">
@@ -60,6 +67,8 @@ export default function placement() {
       </div>
 
       <div className="separation"></div>
+
+      {open && <PresentationModal setOpen={setOpen} type={"placement"} />}
     </section>
   );
 }

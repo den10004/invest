@@ -1,7 +1,22 @@
 "use client";
+import { useEffect, useState } from "react";
 import "./index.css";
+import Link from "next/link";
 
-export default function PresentationModal({ setOpen }) {
+export default function PresentationModal({ setOpen, type }) {
+  const [active, setActive] = useState("phone");
+
+  useEffect(() => {
+    function handleEscapeKey(event) {
+      if (event.code === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", handleEscapeKey);
+    return () => document.removeEventListener("keydown", handleEscapeKey);
+  }, []);
+
   return (
     <div id="get-present" className="modal_form">
       <div className="top-form popup">
@@ -13,12 +28,18 @@ export default function PresentationModal({ setOpen }) {
           method="post"
           className="custom-form modal-form ajax_form"
         >
-          <div className="modal-title">
-            Заполните форму для получения презентации
-          </div>
+          {type === "presentation" && (
+            <div className="modal-title">
+              Заполните форму для получения презентации
+            </div>
+          )}
 
-          {/*
-                <div className="modal-title">Куда вам отправить презентацию инвестпроекта?</div>*/}
+          {type != "presentation" && (
+            <div className="modal-title">
+              Куда вам отправить презентацию инвестпроекта?
+            </div>
+          )}
+
           <fieldset className="options">
             <div className="field">
               <input
@@ -27,6 +48,8 @@ export default function PresentationModal({ setOpen }) {
                 className="radio_phone"
                 name="option"
                 value="Телефон"
+                defaultChecked
+                onClick={() => setActive("phone")}
               />
               <label htmlFor="radio_phone">
                 <svg
@@ -50,6 +73,7 @@ export default function PresentationModal({ setOpen }) {
                 className="radio_whatsapp"
                 name="option"
                 value="WhatsApp"
+                onClick={() => setActive("whatsapp")}
               />
               <label htmlFor="radio_whatsapp">
                 <svg
@@ -72,6 +96,7 @@ export default function PresentationModal({ setOpen }) {
                 className="radio_telegram"
                 name="option"
                 value="Telegram"
+                onClick={() => setActive("telegram")}
               />
               <label htmlFor="radio_telegram">
                 <svg
@@ -94,6 +119,7 @@ export default function PresentationModal({ setOpen }) {
                 className="radio_email"
                 name="option"
                 value="E-mail"
+                onClick={() => setActive("email")}
               />
               <label htmlFor="radio_email">
                 <svg
@@ -123,19 +149,49 @@ export default function PresentationModal({ setOpen }) {
               maxLength="25"
             />
           </div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Введите e-mail"
-            style={{ display: "none" }}
-          />
-          <input
-            type="tel"
-            name="telephone"
-            placeholder="Введите номер телефона"
-            data-phone-pattern
-            pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
-          />
+
+          {active === "phone" && (
+            <input
+              type="tel"
+              name="telephone"
+              placeholder="Введите номер телефона"
+              data-phone-pattern
+              pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
+            />
+          )}
+
+          {active === "whatsapp" && (
+            <input
+              type="tel"
+              name="telephone"
+              placeholder="Введите номер whattApp"
+              data-phone-pattern
+              pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
+            />
+          )}
+
+          {active === "telegram" && (
+            <input
+              type="tel"
+              name="telephone"
+              placeholder="Введите номер telegram"
+              data-phone-pattern
+              pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
+            />
+          )}
+          {active === "email" && (
+            <>
+              {" "}
+              <input type="email" name="email" placeholder="Введите e-mail" />
+              <input
+                type="tel"
+                name="telephone"
+                placeholder="Введите номер телефона"
+                data-phone-pattern
+                pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
+              />
+            </>
+          )}
 
           <input type="hidden" name="action" value="custom_form_ajax" />
           <input type="hidden" name="franch_id" />
@@ -215,18 +271,18 @@ export default function PresentationModal({ setOpen }) {
             className="btn-yellow btn-yellow big-btn btn-pdf-new"
             style={{ width: "100%", textAlign: "center" }}
           >
-            <i className="i-download-pdf"></i>
+            {type === "placement" && <i className="i-download-pdf"></i>}
             {/*
                 className="btn submit">*/}
             Получить презентацию
           </button>
 
           <div className="polit-descr">
-            Нажимая кнопку "Получить презентацию", я подтверждаю, что ознакомлен
-            и согласен с условиями{" "}
-            <a href="/" target="_blank" className="polit">
+            Нажимая кнопку Получить презентацию, я подтверждаю, что ознакомлен и
+            согласен с условиями
+            <Link href="/" target="_blank" className="polit">
               политики обработки персональных данных
-            </a>
+            </Link>
           </div>
         </form>
       </div>
