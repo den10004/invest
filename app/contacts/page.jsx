@@ -30,9 +30,9 @@ export default function Contacts() {
               required=""
               minLength="2"
               maxLength="25"
-              autocorrect="off"
-              autocapitalize="off"
-              spellcheck="false"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck="false"
               className="suggestions-input"
               style={{ boxSizing: "border-box" }}
             />
