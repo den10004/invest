@@ -1,0 +1,51 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-ba8545048e22c58a.js",
+      "static/chunks/fd9d1056-5f8c24caf3bfc639.js",
+      "static/chunks/117-9fbd1dfde9d77394.js",
+      "static/chunks/main-app-dbbe067888994f0d.js",
+      "static/chunks/app/_not-found/page-5195b4db446e1976.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-ba8545048e22c58a.js",
+      "static/chunks/fd9d1056-5f8c24caf3bfc639.js",
+      "static/chunks/117-9fbd1dfde9d77394.js",
+      "static/chunks/main-app-dbbe067888994f0d.js",
+      "static/css/f446334680b99219.css",
+      "static/css/b9e0b7ebf235dc16.css",
+      "static/chunks/648-051588bbb9a286ae.js",
+      "static/chunks/app/layout-13ba894e2eac5230.js"
+    ],
+    "/contacts/page": [
+      "static/chunks/webpack-ba8545048e22c58a.js",
+      "static/chunks/fd9d1056-5f8c24caf3bfc639.js",
+      "static/chunks/117-9fbd1dfde9d77394.js",
+      "static/chunks/main-app-dbbe067888994f0d.js",
+      "static/chunks/app/contacts/page-932b9bb638b49e7a.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-ba8545048e22c58a.js",
+      "static/chunks/fd9d1056-5f8c24caf3bfc639.js",
+      "static/chunks/117-9fbd1dfde9d77394.js",
+      "static/chunks/main-app-dbbe067888994f0d.js",
+      "static/css/74f37f8a9a268abb.css",
+      "static/css/b9e0b7ebf235dc16.css",
+      "static/chunks/648-051588bbb9a286ae.js",
+      "static/chunks/681-d91a8d186c4ea9e1.js",
+      "static/chunks/211-a7f6bf81ca9174bd.js",
+      "static/chunks/app/page-bd75f16385601366.js"
+    ],
+    "/placement/page": [
+      "static/chunks/webpack-ba8545048e22c58a.js",
+      "static/chunks/fd9d1056-5f8c24caf3bfc639.js",
+      "static/chunks/117-9fbd1dfde9d77394.js",
+      "static/chunks/main-app-dbbe067888994f0d.js",
+      "static/css/b1abc03c87bed341.css",
+      "static/css/b9e0b7ebf235dc16.css",
+      "static/chunks/648-051588bbb9a286ae.js",
+      "static/chunks/211-a7f6bf81ca9174bd.js",
+      "static/chunks/app/placement/page-4b6b1c6e682f6979.js"
+    ]
+  }
+}
