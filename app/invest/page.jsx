@@ -7,7 +7,7 @@ import icon3 from "@/public/icon6.webp";
 import PresentationModal from "@/components/Modals/PresentationModal";
 import { useState } from "react";
 
-export default function invest() {
+export default function Invest() {
   const [open, setOpen] = useState(false);
   return (
     <section id="main" className="shine">
