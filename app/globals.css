@@ -681,7 +681,7 @@ section#main {
   background-color: #0b1e30;
   color: white;
   margin-bottom: 0;
-  /* padding-bottom: 1px;*/
+  padding-bottom: 1px;
 }
 
 .shine:before {

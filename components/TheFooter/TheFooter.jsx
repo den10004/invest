@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./style.css";
-import { telephone, telephoneMailto, email, year } from "./../../lib/tel";
+import { telephone, telephoneMailto, email } from "./../../lib/tel";
 
 export default function TheFooter() {
   return (
