@@ -78,6 +78,19 @@ header .btn-yellow {
         padding-left: 5px;
         padding-right: 11px;
     }
+
+    .close-header {
+        display: block;
+        position: absolute;
+        right: 11px;
+        top: 11px;
+        z-index: 10;
+        color: grey;
+        font-size: 33px;
+        cursor: pointer;
+        padding: 10px;
+        font-weight: 600;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -85,7 +98,7 @@ header .btn-yellow {
         padding: 15px 0;
     }
 
-    header .btn-yellow {
+    .header .btn-yellow {
         padding: 6.4px 8.7px;
         font-size: 9px;
         margin-right: 10px;
@@ -97,7 +110,35 @@ header .btn-yellow {
         -ms-flex-order: 2;
         order: 2;
     }
+
+    .header nav.flex {
+        padding: 7px 0;
+        font-size: 15px;
+        gap: 0px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+
+
+    nav.flex a:not(:last-child):after {
+        display: none;
+    }
+
+    nav a {
+        display: block;
+        margin: 0;
+        align-items: left;
+    }
+
+    .close-header {
+        right: 20px;
+        top: -4px;
+        font-size: 24px;
+    }
 }
+
+
 
 @media screen and (max-width: 355px) {
     a.logo {

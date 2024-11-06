@@ -6,6 +6,7 @@ import icon2 from "@/public/icon5.webp";
 import icon3 from "@/public/icon6.webp";
 import PresentationModal from "@/components/Modals/PresentationModal";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Invest() {
   const [open, setOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function Invest() {
         <div className="main-tr-box flex">
           <div className="main-tr-item">
             <div className="main-tr-item-img">
-              <img src={icon.src} alt="заявки" />
+              <Image src={icon.src} alt="заявки" />
               <div className="num-small">01</div>
             </div>
             <p>
@@ -40,7 +41,7 @@ export default function Invest() {
 
           <div className="main-tr-item">
             <div className="main-tr-item-img">
-              <img src={icon2.src} alt="заявки" />
+              <Image src={icon2.src} alt="заявки" />
               <div className="num-small">02</div>
             </div>
             <p>
@@ -51,7 +52,7 @@ export default function Invest() {
 
           <div className="main-tr-item">
             <div className="main-tr-item-img">
-              <img src={icon3.src} alt="заявки" />
+              <Image src={icon3.src} alt="заявки" />
               <div className="num-small">03</div>
             </div>
             <p>
@@ -60,7 +61,7 @@ export default function Invest() {
             </p>
           </div>
         </div>
-        <img src={phone.src} className="main-img" alt="" />
+        <Image src={phone.src} className="main-img" alt="" />
       </div>
 
       <div className="separation"></div>
