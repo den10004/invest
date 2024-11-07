@@ -47,14 +47,20 @@ export default function RequestModal({ setShowModal }) {
     formData.append("utm_medium", utmParams.utm_medium);
     formData.append("utm_campaign", utmParams.utm_campaign);
     formData.append("utm_term", utmParams.utm_term);
-
     formData.append("utm_content", utmParams.utm_content);
     formData.append("utm_placement", utmParams.utm_placement);
     formData.append("utm_region_name", utmParams.utm_region_name);
 
     const pb = await getPb();
-
-    const data = await pb.collection("orders").create(formData);
+    try {
+      const data = await pb.collection("orders").create(formData);
+      setShowModal(false);
+      alert("Форма отправлена");
+    } catch (error) {
+      console.error(error);
+      setShowModal(false);
+      alert("Ошибка при отправки формы");
+    }
   }
 
   return (
