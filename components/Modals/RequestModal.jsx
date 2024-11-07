@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
-/*import InputMask from "react-input-mask";*/
+
 import "./index.css";
+import Link from "next/link";
 
 export default function RequestModal({ setShowModal }) {
   const searchParams = useSearchParams();
@@ -42,7 +43,6 @@ export default function RequestModal({ setShowModal }) {
   async function Record(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    console.log(utmParams);
     formData.append("utm_source", utmParams.utm_source);
     formData.append("utm_medium", utmParams.utm_medium);
     formData.append("utm_campaign", utmParams.utm_campaign);
@@ -90,23 +90,23 @@ export default function RequestModal({ setShowModal }) {
                 minLength="2"
                 maxLength="25"
               />
+            </div>
+
+            <div className="input-box">
               <input
                 type="tel"
-                name="telephone"
+                name="phone"
                 placeholder="Введите номер телефона"
-                data-phone-pattern
-                pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
               />
             </div>
 
-            {/*
             <input type="hidden" name="action" value="custom_form_ajax" />
             <input type="hidden" name="city" />
             <input type="hidden" name="gmt" className="gmt" />
             <input type="hidden" name="header" value="Размещение проекта" />
             <input type="hidden" name="which_form" value="Размещение проекта" />
             <input type="hidden" name="link" value="" />
-      
+            {/*
             <input
               type="hidden"
               name="utm_source"
@@ -162,9 +162,9 @@ export default function RequestModal({ setShowModal }) {
             <div className="polit-descr">
               Нажимая кнопку Разместить проект, я подтверждаю, что ознакомлен и
               согласен с условиями{" "}
-              <a href="" target="_blank" className="polit">
+              <Link href="" target="_blank" className="polit">
                 политики обработки персональных данных
-              </a>
+              </Link>
             </div>
           </form>
         </div>
