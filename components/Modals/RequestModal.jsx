@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
-import InputMask from "react-input-mask";
+/*import InputMask from "react-input-mask";*/
 import "./index.css";
 
 export default function RequestModal({ setShowModal }) {
@@ -90,15 +90,15 @@ export default function RequestModal({ setShowModal }) {
                 minLength="2"
                 maxLength="25"
               />
+              <input
+                type="tel"
+                name="telephone"
+                placeholder="Введите номер телефона"
+                data-phone-pattern
+                pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
+              />
             </div>
 
-            <InputMask
-              mask="+7(_999)999-99-99"
-              placeholder="+7(123)456-78-90"
-              name="phone"
-            >
-              {(inputProps) => <input {...inputProps} />}
-            </InputMask>
             {/*
             <input type="hidden" name="action" value="custom_form_ajax" />
             <input type="hidden" name="city" />
