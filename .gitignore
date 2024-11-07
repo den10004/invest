@@ -2,6 +2,7 @@
 
 /.next
 /cert
+server.js
 
 # dependencies
 /node_modules

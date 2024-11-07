@@ -2,7 +2,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import { SliderNavButtons } from "./SliderNavButtons";
-import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -28,7 +27,7 @@ export default function Slider(images) {
     >
       {images.images.map((url) => (
         <SwiperSlide key={url}>
-          <Image src={url} />
+          <img src={url} />
         </SwiperSlide>
       ))}
 

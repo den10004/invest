@@ -1,43 +1,60 @@
-import { useEffect } from "react";
-import "./index.css";
+import { useEffect, useState } from "react";
 import { getPb } from "@/lib/pb";
+import { useSearchParams } from "next/navigation";
+
+import "./index.css";
 
 export default function RequestModal({ setShowModal }) {
+  const searchParams = useSearchParams();
+  const [utmParams, setUtmParams] = useState(null);
+
   useEffect(() => {
     function handleEscapeKey(event) {
       if (event.code === "Escape") {
         setShowModal(false);
       }
     }
-
     document.addEventListener("keydown", handleEscapeKey);
     return () => document.removeEventListener("keydown", handleEscapeKey);
   }, []);
 
-  const datas = {
-    project: "RELATION_RECORD_ID",
-    name: "test",
-    phone: 123,
-    email: "test@example.com",
-    ip: "test",
-    browser: "test",
-    platform: "test",
-    utm_source: "test",
-    utm_medium: "test",
-    utm_campaign: "test",
-    utm_term: "test",
-    utm_content: "test",
-    utm_placement: "test",
-    utm_region_name: "test",
-  };
+  useEffect(() => {
+    if (searchParams) {
+      const params = Object.fromEntries(searchParams.entries());
+      const utmKeys = [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "utm_placement",
+        "utm_region_name",
+      ];
+      const filteredParams = utmKeys.reduce((acc, key) => {
+        if (params[key]) acc[key] = params[key];
+        return acc;
+      }, {});
+
+      setUtmParams(filteredParams);
+    }
+  }, [searchParams]);
 
   async function Record(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    console.log(formData);
+    console.log(utmParams);
+    formData.append("utm_source", utmParams.utm_source);
+    formData.append("utm_medium", utmParams.utm_medium);
+    formData.append("utm_campaign", utmParams.utm_campaign);
+    formData.append("utm_term", utmParams.utm_term);
+
+    formData.append("utm_content", utmParams.utm_content);
+    formData.append("utm_placement", utmParams.utm_placement);
+    formData.append("utm_region_name", utmParams.utm_region_name);
+
     const pb = await getPb();
+
     const data = await pb.collection("orders").create(formData);
-    console.log(data);
   }
 
   return (
@@ -83,7 +100,7 @@ export default function RequestModal({ setShowModal }) {
             <input type="hidden" name="header" value="Размещение проекта" />
             <input type="hidden" name="which_form" value="Размещение проекта" />
             <input type="hidden" name="link" value="" />
-
+            {/*
             <input
               type="hidden"
               name="utm_source"
@@ -131,7 +148,7 @@ export default function RequestModal({ setShowModal }) {
               name="utm_mail"
               className="source"
               value="<?php echo isset($_GET['utm_mail']) ? $_GET['utm_mail'] : ''; ?>"
-            />
+            />*/}
 
             <button id="captcha1" className="btn submit">
               Разместить проект
