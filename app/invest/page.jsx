@@ -6,6 +6,7 @@ import icon2 from "@/public/icon5.webp";
 import icon3 from "@/public/icon6.webp";
 import PresentationModal from "@/components/Modals/PresentationModal";
 import { useState } from "react";
+import TheFooter from "@/components/TheFooter/TheFooter";
 
 export default function Invest() {
   const [open, setOpen] = useState(false);
@@ -68,6 +69,7 @@ export default function Invest() {
 
         {open && <PresentationModal setOpen={setOpen} type={"placement"} />}
       </section>
+      <TheFooter />
     </>
   );
 }

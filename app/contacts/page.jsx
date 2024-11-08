@@ -1,6 +1,7 @@
 import Link from "next/link";
 import "./style.css";
 import { telephone, telephoneMailto, email } from "./../../lib/tel";
+import TheFooter from "@/components/TheFooter/TheFooter";
 
 export default function Contacts() {
   return (
@@ -102,6 +103,7 @@ export default function Contacts() {
           </div>
         </form>
       </div>
+      <TheFooter />
     </>
   );
 }
