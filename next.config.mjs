@@ -9,6 +9,7 @@ const nextConfig = {
     DB_PASS: process.env.DB_PASS,
     DB_HOST: process.env.DB_HOST,
   },
+  reactStrictMode: false,
 };
 
 export default nextConfig;

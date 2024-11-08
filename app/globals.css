@@ -119,6 +119,7 @@ h2 {
 @media screen and (max-width: 1000px) {
   h1 {
     font-size: 56px;
+    margin: 40px 0 20px 0;
 
   }
 
@@ -132,6 +133,7 @@ h2 {
   h1 {
     font-size: 50px;
     line-height: 1;
+    margin: 20px 0 20px 0;
 
   }
 
@@ -153,7 +155,7 @@ h2 {
 
 @media screen and (max-width: 425px) {
   h1 {
-    font-size: 30px;
+    font-size: 22px;
   }
 
   h2 {
@@ -161,6 +163,57 @@ h2 {
   }
 }
 
+
+.privacy {
+  background: var(--color-bg-item);
+  color: var(--color-text-dark);
+  padding: 55px 0
+}
+
+.privacy>div>ol>li {
+  font-size: 26px;
+  line-height: 170%;
+}
+
+@media screen and (max-width: 768px) {
+  .privacy>div>ol>li {
+    font-size: 24px;
+
+  }
+}
+
+.privacy>div>h1 {
+  text-align: left !important;
+}
+
+@media screen and (max-width: 768px) {
+  .privacy {
+    padding: 35px 0
+  }
+
+  .privacy>div>h1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .privacy>div>h1 {
+    font-size: 30px;
+  }
+
+  .privacy>div>ol>li {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+}
+
+
+@media screen and (max-width: 425px) {
+  .privacy>div>h1 {
+    font-size: 22px;
+  }
+}
 
 nav>.container {
   display: flex;

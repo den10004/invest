@@ -41,7 +41,7 @@ export default function TheFooter() {
             </div>
           </div>
           <p>
-            <Link className="polit" href="/>">
+            <Link className="polit" href="/policy">
               Политика конфиденциальности
             </Link>
           </p>

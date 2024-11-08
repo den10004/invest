@@ -1,21 +1,78 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { getPb } from "@/lib/pb";
+import { useSearchParams } from "next/navigation";
 import "./index.css";
 import Link from "next/link";
+//import { investContext } from "@/context/context";
 
-export default function PresentationModal({ setOpen, type }) {
+export default function PresentationModal({ setOpen, type, title = "" }) {
+  //let { mm } = useContext(investContext);
+  console.log(title);
   const [active, setActive] = useState("phone");
+  const searchParams = useSearchParams();
+  const [utmParams, setUtmParams] = useState(null);
+  const phoneInput = useRef(null);
 
   useEffect(() => {
-    function handleEscapeKey(event) {
+    function HandleEscapeKey(event) {
       if (event.code === "Escape") {
         setOpen(false);
       }
     }
 
-    document.addEventListener("keydown", handleEscapeKey);
-    return () => document.removeEventListener("keydown", handleEscapeKey);
+    document.addEventListener("keydown", HandleEscapeKey);
+    return () => document.removeEventListener("keydown", HandleEscapeKey);
   }, []);
+
+  useEffect(() => {
+    if (searchParams) {
+      const params = Object.fromEntries(searchParams.entries());
+      const utmKeys = [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "utm_placement",
+        "utm_region_name",
+      ];
+      const filteredParams = utmKeys.reduce((acc, key) => {
+        if (params[key]) acc[key] = params[key];
+        return acc;
+      }, {});
+
+      setUtmParams(filteredParams);
+    }
+  }, [searchParams]);
+
+  async function Records(event) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    formData.append("utm_source", utmParams.utm_source);
+    formData.append("utm_medium", utmParams.utm_medium);
+    formData.append("utm_campaign", utmParams.utm_campaign);
+    formData.append("utm_term", utmParams.utm_term);
+    formData.append("utm_content", utmParams.utm_content);
+    formData.append("utm_placement", utmParams.utm_placement);
+    formData.append("utm_region_name", utmParams.utm_region_name);
+    formData.append("title", title);
+
+    const pb = await getPb();
+
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ", " + pair[1]);
+    }
+    try {
+      const data = await pb.collection("orders").create(formData);
+      setOpen(false);
+      alert("Форма отправлена");
+    } catch (error) {
+      console.error(error.message);
+      setOpen(false);
+      alert("Ошибка при отправки формы");
+    }
+  }
 
   return (
     <div id="get-present" className="modal_form">
@@ -27,6 +84,7 @@ export default function PresentationModal({ setOpen, type }) {
           action=""
           method="post"
           className="custom-form modal-form ajax_form"
+          onSubmit={Records}
         >
           {type === "presentation" && (
             <div className="modal-title">
@@ -156,7 +214,6 @@ export default function PresentationModal({ setOpen, type }) {
               name="telephone"
               placeholder="Введите номер телефона"
               data-phone-pattern
-              pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
             />
           )}
 
@@ -166,7 +223,6 @@ export default function PresentationModal({ setOpen, type }) {
               name="telephone"
               placeholder="Введите номер whattApp"
               data-phone-pattern
-              pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
             />
           )}
 
@@ -176,23 +232,22 @@ export default function PresentationModal({ setOpen, type }) {
               name="telephone"
               placeholder="Введите номер telegram"
               data-phone-pattern
-              pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
             />
           )}
           {active === "email" && (
             <>
-              {" "}
               <input type="email" name="email" placeholder="Введите e-mail" />
               <input
                 type="tel"
                 name="telephone"
                 placeholder="Введите номер телефона"
                 data-phone-pattern
-                pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"
+                /*
+                pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"*/
               />
             </>
           )}
-
+          {/*
           <input type="hidden" name="action" value="custom_form_ajax" />
           <input type="hidden" name="franch_id" />
           <input type="hidden" name="city" />
@@ -265,7 +320,7 @@ export default function PresentationModal({ setOpen, type }) {
             data-callback="onSubmit"
             data-size="invisible"
           ></div>
-
+*/}
           <button
             id="captcha1"
             className="btn-yellow btn-yellow big-btn btn-pdf-new"
@@ -280,7 +335,7 @@ export default function PresentationModal({ setOpen, type }) {
           <div className="polit-descr">
             Нажимая кнопку Получить презентацию, я подтверждаю, что ознакомлен и
             согласен с условиями
-            <Link href="/" target="_blank" className="polit">
+            <Link href="/policy" target="_blank" className="polit">
               политики обработки персональных данных
             </Link>
           </div>

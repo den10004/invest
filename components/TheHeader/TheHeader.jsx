@@ -15,16 +15,6 @@ export default function TheHeader() {
   const navbtn = useRef();
   const [showModal, setShowModal] = useState(false);
 
-  /*
-  const handleResize = () => {
-    if (window.innerWidth < 1171) {
-      navbtn.current.style.display = "none";
-    }
-  };
-useEffect(() => {
-    window.addEventListener("resize", handleResize);
-  }, []);
-*/
   const showMenuOpen = () => {
     nav.current.style.display = "flex";
     navbtn.current.style.display = "block";
@@ -65,7 +55,9 @@ useEffect(() => {
           <span>Разместить проект</span>
         </button>
       </div>
-      {showModal && <RequestModal setShowModal={setShowModal} />}
+      {showModal && (
+        <RequestModal setShowModal={setShowModal} showModal={showModal} />
+      )}
     </header>
   );
 }
