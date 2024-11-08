@@ -2,7 +2,6 @@
 
 import ProjectRender from "@/services/connect";
 import { useEffect, useState } from "react";
-
 import Card from "./Card";
 
 export default function Projects() {

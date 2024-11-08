@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
-
 import "./index.css";
 import Link from "next/link";
 
@@ -262,7 +261,7 @@ export default function RequestModal({ setShowModal }) {
               value="<?php echo isset($_GET['utm_mail']) ? $_GET['utm_mail'] : ''; ?>"
             />*/}
 
-            <button id="captcha1" className="btn submit">
+            <button id="captcha1" className="btn submit btn-yellow big-btn">
               Разместить проект
             </button>
             <div className="polit-descr">

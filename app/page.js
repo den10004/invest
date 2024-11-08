@@ -1,4 +1,5 @@
 "use client";
+import ScrollToTopButton from "@/components/ScrollUp";
 import Projects from "../components/Projects/Projects";
 import { investContext } from "@/context/context";
 
@@ -18,6 +19,7 @@ export default function Home() {
           </div>
         </div>
         <Projects />
+        <ScrollToTopButton />
       </investContext.Provider>
     </>
   );
