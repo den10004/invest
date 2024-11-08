@@ -102,7 +102,6 @@ export default function Contacts() {
           </div>
         </form>
       </div>
-      <></>
     </>
   );
 }
