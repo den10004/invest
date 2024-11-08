@@ -1,4 +1,3 @@
-"use client";
 import { useContext, useEffect, useRef, useState } from "react";
 import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
@@ -6,9 +5,9 @@ import "./index.css";
 import Link from "next/link";
 //import { investContext } from "@/context/context";
 
-export default function PresentationModal({ setOpen, type, title = "" }) {
+export default function PresentationModal({ setOpen, type, projectId }) {
   //let { mm } = useContext(investContext);
-  console.log(title);
+
   const [active, setActive] = useState("phone");
   const searchParams = useSearchParams();
   const [utmParams, setUtmParams] = useState(null);
@@ -46,7 +45,7 @@ export default function PresentationModal({ setOpen, type, title = "" }) {
     }
   }, [searchParams]);
 
-  async function Records(event) {
+  async function Record(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     formData.append("utm_source", utmParams.utm_source);
@@ -56,7 +55,7 @@ export default function PresentationModal({ setOpen, type, title = "" }) {
     formData.append("utm_content", utmParams.utm_content);
     formData.append("utm_placement", utmParams.utm_placement);
     formData.append("utm_region_name", utmParams.utm_region_name);
-    formData.append("title", title);
+    formData.append("project", projectId);
 
     const pb = await getPb();
 
@@ -65,6 +64,7 @@ export default function PresentationModal({ setOpen, type, title = "" }) {
     }
     try {
       const data = await pb.collection("orders").create(formData);
+      console.log(data);
       setOpen(false);
       alert("Форма отправлена");
     } catch (error) {
@@ -84,7 +84,7 @@ export default function PresentationModal({ setOpen, type, title = "" }) {
           action=""
           method="post"
           className="custom-form modal-form ajax_form"
-          onSubmit={Records}
+          onSubmit={Record}
         >
           {type === "presentation" && (
             <div className="modal-title">
@@ -211,7 +211,7 @@ export default function PresentationModal({ setOpen, type, title = "" }) {
           {active === "phone" && (
             <input
               type="tel"
-              name="telephone"
+              name="phone"
               placeholder="Введите номер телефона"
               data-phone-pattern
             />
@@ -220,7 +220,7 @@ export default function PresentationModal({ setOpen, type, title = "" }) {
           {active === "whatsapp" && (
             <input
               type="tel"
-              name="telephone"
+              name="phone"
               placeholder="Введите номер whattApp"
               data-phone-pattern
             />
@@ -229,7 +229,7 @@ export default function PresentationModal({ setOpen, type, title = "" }) {
           {active === "telegram" && (
             <input
               type="tel"
-              name="telephone"
+              name="phone"
               placeholder="Введите номер telegram"
               data-phone-pattern
             />
@@ -239,7 +239,7 @@ export default function PresentationModal({ setOpen, type, title = "" }) {
               <input type="email" name="email" placeholder="Введите e-mail" />
               <input
                 type="tel"
-                name="telephone"
+                name="phone"
                 placeholder="Введите номер телефона"
                 data-phone-pattern
                 /*
@@ -322,7 +322,6 @@ export default function PresentationModal({ setOpen, type, title = "" }) {
           ></div>
 */}
           <button
-            id="captcha1"
             className="btn-yellow btn-yellow big-btn btn-pdf-new"
             style={{ width: "100%", textAlign: "center" }}
           >

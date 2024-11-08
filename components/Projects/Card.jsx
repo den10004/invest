@@ -67,7 +67,7 @@ export default function Card({ p, pbArr }) {
         <PresentationModal
           setOpen={setOpen}
           type={"presentation"}
-          title={p.title}
+          projectId={p.id}
         />
       )}
     </>

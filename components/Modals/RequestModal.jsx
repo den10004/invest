@@ -197,7 +197,7 @@ export default function RequestModal({ setShowModal }) {
             </div>
             <div className="input-box">
               <input
-                type="tel"
+                type="text"
                 ref={phoneInput}
                 name="phone"
                 placeholder="Введите номер телефона"
