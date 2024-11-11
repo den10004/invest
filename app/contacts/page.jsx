@@ -103,7 +103,6 @@ export default function Contacts() {
     }
     try {
       const data = await pb.collection("orders").create(formData);
-      console.log(data);
       router.push("/thanks");
     } catch (error) {
       console.error(error.message);

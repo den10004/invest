@@ -17,7 +17,7 @@ export default function Thanks() {
             Если Вы оставили заявку в нерабочее время, мы перезвоним Вам на
             следующий рабочий день
           </p>
-          <Link href="/" class="btn-yellow btn-yellow big-btn">
+          <Link href="/" className="btn-yellow btn-yellow big-btn">
             Вернуться на сайт
           </Link>
         </div>
