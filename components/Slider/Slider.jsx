@@ -28,7 +28,7 @@ export default function Slider(images) {
     >
       {images.images.map((url) => (
         <SwiperSlide key={url}>
-          <img src={url} alt="слайдер" className="img-aspect" />
+          <img src={url} alt="слайдер" />
         </SwiperSlide>
       ))}
 
