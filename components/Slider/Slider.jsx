@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./style.css";
+import Image from "next/image";
 
 export default function Slider(images) {
   return (
@@ -27,7 +28,7 @@ export default function Slider(images) {
     >
       {images.images.map((url) => (
         <SwiperSlide key={url}>
-          <img src={url} />
+          <img src={url} alt="слайдер" className="img-aspect" />
         </SwiperSlide>
       ))}
 

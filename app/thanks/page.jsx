@@ -1,7 +1,6 @@
 import TheFooter from "@/components/TheFooter/TheFooter";
 import Link from "next/link";
 import "./style.css";
-import "@/app/globals.css";
 
 export default function Thanks() {
   return (

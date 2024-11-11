@@ -4,12 +4,15 @@ import phone from "@/public/phones.webp";
 import icon from "@/public/icon2.webp";
 import icon2 from "@/public/icon5.webp";
 import icon3 from "@/public/icon6.webp";
+import Image from "next/image";
+
 import PresentationModal from "@/components/Modals/PresentationModal";
 import { useState } from "react";
 import TheFooter from "@/components/TheFooter/TheFooter";
 
 export default function Invest() {
   const [open, setOpen] = useState(false);
+
   return (
     <>
       <section id="main" className="shine">
@@ -32,7 +35,7 @@ export default function Invest() {
           <div className="main-tr-box flex">
             <div className="main-tr-item">
               <div className="main-tr-item-img">
-                <img src={icon.src} alt="заявки" />
+                <Image src={icon} alt="заявки" />
                 <div className="num-small">01</div>
               </div>
               <p>
@@ -42,7 +45,7 @@ export default function Invest() {
 
             <div className="main-tr-item">
               <div className="main-tr-item-img">
-                <img src={icon2.src} alt="заявки" />
+                <Image src={icon2} alt="заявки" />
                 <div className="num-small">02</div>
               </div>
               <p>
@@ -53,7 +56,7 @@ export default function Invest() {
 
             <div className="main-tr-item">
               <div className="main-tr-item-img">
-                <img src={icon3.src} alt="заявки" />
+                <Image src={icon3} alt="заявки" />
                 <div className="num-small">03</div>
               </div>
               <p>

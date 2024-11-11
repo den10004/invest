@@ -7,12 +7,13 @@
     grid-template-columns: 600px 1fr 1fr;
     grid-template-rows: 75px 168px auto;
     gap: 20px;
-    color: var(--color-text-item)
+    color: var(--color-text-item);
 }
 
 .item .header {
     grid-column: 2 / 4;
     grid-row: 1 / 1;
+
 }
 
 .item .title {

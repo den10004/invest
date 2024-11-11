@@ -3,7 +3,6 @@
 import styles from "./page.module.css";
 import Slider from "../Slider/Slider";
 import PresentationModal from "./../Modals/PresentationModal";
-
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 

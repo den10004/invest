@@ -3,6 +3,10 @@
 
 }
 
+.img-aspect {
+    aspect-ratio: 5 / 3;
+}
+
 .swiper-wrapper {
     position: relative;
 }
