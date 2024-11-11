@@ -5,6 +5,7 @@ export default async function ProjectRender() {
   const data = await pb.collection("catalogue").getList(0, 100, {
     expand: "project",
   });
+  if (!data) throw new Error("Данные не загрузились");
   return {
     pb,
     data,

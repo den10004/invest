@@ -12,6 +12,8 @@ export default function PresentationModal({ setOpen, type, projectId }) {
   const searchParams = useSearchParams();
   const [utmParams, setUtmParams] = useState(null);
   const phoneInput = useRef(null);
+  const userIP = req.headers["x-real-ip"] || req.connection.remoteAddress;
+  console.log(userIP);
 
   useEffect(() => {
     function HandleEscapeKey(event) {

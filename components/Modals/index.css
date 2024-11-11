@@ -212,7 +212,7 @@ form fieldset.options .field label {
     cursor: pointer;
     padding: 6px;
     border-radius: 6px;
-    color: var(--color-text-item #222222);
+    color: var(--color-text-item);
 }
 
 form fieldset.options .field input[type=radio] {
@@ -300,5 +300,5 @@ form fieldset.options .field input[type=radio] {
     cursor: pointer;
     padding: 6px;
     border-radius: 6px;
-    color: var(--color-text-item #222222);
+    color: var(--color-text-item);
 }
