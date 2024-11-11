@@ -11,7 +11,7 @@ import { Telmask } from "@/lib/telmask";
 
 export default function Contacts() {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
   const [utmParams, setUtmParams] = useState(null);
   const phoneInput = useRef(null);
