@@ -1,18 +1,36 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
 import "./index.css";
 import Link from "next/link";
+import { Telmask } from "@/lib/telmask";
 
 export default function PresentationModal({ setOpen, type, projectId }) {
   const [active, setActive] = useState("phone");
+  const [placeholderText, setPlaceholderText] = useState(
+    "Введите номер телефона"
+  );
   const searchParams = useSearchParams();
   const [utmParams, setUtmParams] = useState(null);
   const phoneInput = useRef(null);
-  const userIP = req.headers["x-real-ip"] || req.connection.remoteAddress;
-  console.log(userIP);
 
   useEffect(() => {
+    if (active === "phone") {
+      setPlaceholderText("Введите номер телефона");
+    } else if (active === "whatsapp") {
+      setPlaceholderText("Введите номер WhattApp");
+    } else if (active === "telegram") {
+      setPlaceholderText("telegram");
+    } else if (active === "email") {
+      setPlaceholderText("Введите номер телефона");
+    } else {
+      setPlaceholderText("");
+    }
+  }, [active]);
+
+  useEffect(() => {
+    let phoneEl = phoneInput.current;
+    Telmask(phoneEl);
     function HandleEscapeKey(event) {
       if (event.code === "Escape") {
         setOpen(false);
@@ -21,57 +39,6 @@ export default function PresentationModal({ setOpen, type, projectId }) {
 
     document.addEventListener("keydown", HandleEscapeKey);
     return () => document.removeEventListener("keydown", HandleEscapeKey);
-  }, []);
-
-  useEffect(() => {
-    let eventCallback = function (e) {
-      let el = e.target,
-        clearVal = el.dataset.phoneClear,
-        matrix = "+7__________",
-        i = 0,
-        def = matrix.replace(/\D/g, ""),
-        val = e.target.value.replace(/\D/g, "");
-
-      if (clearVal !== "false" && e.type === "blur") {
-        if (val.length < matrix.match(/([\_\d])/g).length) {
-          e.target.value = "";
-          return;
-        }
-      }
-
-      if (def.length >= val.length) val = def;
-      e.target.value = matrix.replace(/./g, function (a) {
-        return /[_\d]/.test(a) && i < val.length
-          ? val.charAt(i++)
-          : i >= val.length
-          ? ""
-          : a;
-      });
-      let freshInput = true;
-      if (freshInput && i == 2 && e.target.value == "+7 (8") {
-        e.target.value = "+7 (";
-        freshInput = false;
-      }
-    };
-    const pasteCallback = async function (e) {
-      e.preventDefault();
-      let pastedText = await navigator.clipboard.readText();
-      console.log(pastedText);
-      if (pastedText[0] == "8") {
-        e.target.value = "7" + pastedText.substring(1);
-        return;
-      }
-      e.target.value = pastedText;
-    };
-
-    let phone_inputs = document.querySelectorAll("input[name=phone]");
-
-    for (let elem of phone_inputs) {
-      elem.addEventListener("paste", pasteCallback);
-      for (let ev of ["input", "blur", "focus"]) {
-        elem.addEventListener(ev, eventCallback);
-      }
-    }
   }, []);
 
   useEffect(() => {
@@ -114,7 +81,6 @@ export default function PresentationModal({ setOpen, type, projectId }) {
     }*/
     try {
       const data = await pb.collection("orders").create(formData);
-      console.log(data);
       setOpen(false);
       alert("Форма отправлена");
     } catch (error) {
@@ -258,42 +224,17 @@ export default function PresentationModal({ setOpen, type, projectId }) {
             />
           </div>
 
-          {active === "phone" && (
+          {active && (
             <input
               type="tel"
               name="phone"
-              placeholder="Введите номер телефона"
-              data-phone-pattern
-            />
-          )}
-
-          {active === "whatsapp" && (
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Введите номер whattApp"
-              data-phone-pattern
-            />
-          )}
-
-          {active === "telegram" && (
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Введите номер telegram"
+              placeholder={placeholderText}
+              ref={phoneInput}
               data-phone-pattern
             />
           )}
           {active === "email" && (
-            <>
-              <input type="email" name="email" placeholder="Введите e-mail" />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Введите номер телефона"
-                data-phone-pattern
-              />
-            </>
+            <input type="email" name="email" placeholder="Введите e-mail" />
           )}
 
           <button

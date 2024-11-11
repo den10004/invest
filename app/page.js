@@ -1,7 +1,6 @@
 "use client";
 import ScrollToTopButton from "@/components/ScrollUp";
 import Projects from "../components/Projects/Projects";
-import { investContext } from "@/context/context";
 import TheFooter from "@/components/TheFooter/TheFooter";
 
 export default function Home() {

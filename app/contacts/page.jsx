@@ -1,22 +1,31 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-//import { useSearchParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { getPb } from "@/lib/pb";
 import { telephone, telephoneMailto, email } from "../../lib/tel";
 import TheFooter from "@/components/TheFooter/TheFooter";
 import "./style.css";
+import { Telmask } from "@/lib/telmask";
 
 export default function Contacts() {
   const router = useRouter();
-  // const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
+
   const [utmParams, setUtmParams] = useState(null);
+  const phoneInput = useRef(null);
+
+  useEffect(() => {
+    let phoneEl = phoneInput.current;
+    Telmask(phoneEl);
+  }, []);
 
   useEffect(
     () => {
       // if (searchParams) {
-      const params = Object.fromEntries(searchParams1.entries());
+      // const params = Object.fromEntries(searchParams.entries());
+      const params = "";
       const utmKeys = [
         "utm_source",
         "utm_medium",
@@ -35,7 +44,7 @@ export default function Contacts() {
       //   }
     },
     [
-      /*searchParams1*/
+      /*searchParams*/
     ]
   );
 
@@ -50,10 +59,10 @@ export default function Contacts() {
     formData.append("utm_placement", utmParams.utm_placement);
     formData.append("utm_region_name", utmParams.utm_region_name);
     const pb = await getPb();
-
+    /*
     for (var pair of formData.entries()) {
       console.log(pair[0] + ", " + pair[1]);
-    }
+    }*/
     try {
       const data = await pb.collection("orders").create(formData);
       router.push("/thanks");
@@ -109,6 +118,7 @@ export default function Contacts() {
               type="tel"
               name="phone"
               placeholder="Номер телефона"
+              ref={phoneInput}
               required
             />
             <input type="email" name="email" placeholder="Ваш e-mail" />
