@@ -293,85 +293,10 @@ export default function PresentationModal({ setOpen, type, projectId }) {
                 name="phone"
                 placeholder="Введите номер телефона"
                 data-phone-pattern
-                /*
-                pattern="\+7\-[0-9]{3}\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}"*/
               />
             </>
           )}
-          {/*
-          <input type="hidden" name="action" value="custom_form_ajax" />
-          <input type="hidden" name="franch_id" />
-          <input type="hidden" name="city" />
-          <input type="hidden" name="gmt" className="gmt" />
-          <input
-            type="hidden"
-            name="header"
-            value="Заявка на получение презентации инвестпроекта"
-          />
-          <input type="hidden" name="which_form" value="" />
-          <input
-            type="hidden"
-            name="link"
-            value="<?php echo get_permalink(get_the_ID()); ?>"
-          />
 
-          <input
-            type="hidden"
-            name="utm_source"
-            className="source"
-            value="<?php echo isset($_GET['utm_source']) ? $_GET['utm_source'] : ''; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_medium"
-            className="source"
-            value="<?php echo isset($_GET['utm_medium']) ? $_GET['utm_medium'] : ''; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_term"
-            className="source"
-            value="<?php echo isset($_GET['utm_term']) ? $_GET['utm_term'] : ''; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_campaign"
-            className="source"
-            value="<?php echo isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : ''; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_placement"
-            className="source"
-            value="<?php echo isset($_GET['utm_placement']) ? $_GET['utm_placement'] : ''; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_region"
-            className="source"
-            value="<?php echo isset($_GET['utm_region']) ? $_GET['utm_region'] : ''; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_content"
-            className="source"
-            value="<?php echo isset($_GET['utm_content']) ? $_GET['utm_content'] : ''; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_mail"
-            className="source"
-            value="<?php echo isset($_GET['utm_mail']) ? $_GET['utm_mail'] : ''; ?>"
-          />
-
-          <div
-            id="recaptcha2"
-            className="g-recaptcha"
-            data-sitekey="<? echo $public_key; ?>"
-            data-callback="onSubmit"
-            data-size="invisible"
-          ></div>
-*/}
           <button
             className="btn-yellow btn-yellow big-btn btn-pdf-new"
             style={{ width: "100%", textAlign: "center" }}
