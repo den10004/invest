@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getPb } from "@/lib/pb";
-import { telephone, telephoneMailto, email } from "./../../lib/tel";
+import { telephone, telephoneMailto, email } from "../../lib/tel";
 import TheFooter from "@/components/TheFooter/TheFooter";
 import "./style.css";
 
