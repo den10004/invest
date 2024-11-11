@@ -9,6 +9,8 @@ import "./style.css";
 import Image from "next/image";
 
 export default function Slider(images) {
+  const arrayLength = images.images.length;
+
   return (
     <Swiper
       /*
@@ -32,7 +34,7 @@ export default function Slider(images) {
         </SwiperSlide>
       ))}
 
-      <SliderNavButtons />
+      {arrayLength > 1 ? <SliderNavButtons /> : <></>}
     </Swiper>
   );
 }
