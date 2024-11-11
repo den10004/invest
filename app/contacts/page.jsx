@@ -12,7 +12,7 @@ export default function Contacts() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [utmParams, setUtmParams] = useState(null);
-
+  /*
   useEffect(() => {
     let eventCallback = function (e) {
       let el = e.target,
@@ -63,7 +63,8 @@ export default function Contacts() {
       }
     }
   }, []);
-
+  */
+  /*
   useEffect(() => {
     if (searchParams) {
       const params = Object.fromEntries(searchParams.entries());
@@ -84,7 +85,8 @@ export default function Contacts() {
       setUtmParams(filteredParams);
     }
   }, [searchParams]);
-
+*/
+  /*
   async function Record(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -109,7 +111,7 @@ export default function Contacts() {
       alert("Ошибка при отправки формы");
     }
   }
-
+*/
   return (
     <>
       <div className="wrap">
@@ -129,7 +131,7 @@ export default function Contacts() {
           action=""
           method="post"
           className="form-box flex-wrap"
-          onSubmit={Record}
+          /*   onSubmit={Record}*/
         >
           <div className="title">У вас есть вопрос? Напишите его нам </div>
 
