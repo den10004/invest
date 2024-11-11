@@ -13,6 +13,32 @@ export default function Contacts() {
   // const searchParams = useSearchParams();
   const [utmParams, setUtmParams] = useState(null);
 
+  useEffect(
+    () => {
+      // if (searchParams) {
+      const params = Object.fromEntries(searchParams1.entries());
+      const utmKeys = [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "utm_placement",
+        "utm_region_name",
+      ];
+      const filteredParams = utmKeys.reduce((acc, key) => {
+        if (params[key]) acc[key] = params[key];
+        return acc;
+      }, {});
+
+      setUtmParams(filteredParams);
+      //   }
+    },
+    [
+      /*searchParams1*/
+    ]
+  );
+
   async function Record(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);

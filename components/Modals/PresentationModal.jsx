@@ -3,11 +3,8 @@ import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
 import "./index.css";
 import Link from "next/link";
-//import { investContext } from "@/context/context";
 
 export default function PresentationModal({ setOpen, type, projectId }) {
-  //let { mm } = useContext(investContext);
-
   const [active, setActive] = useState("phone");
   const searchParams = useSearchParams();
   const [utmParams, setUtmParams] = useState(null);
