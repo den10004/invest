@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+//import { useSearchParams } from "next/navigation";
 import { getPb } from "@/lib/pb";
 import { telephone, telephoneMailto, email } from "../../lib/tel";
 import TheFooter from "@/components/TheFooter/TheFooter";
@@ -10,11 +10,10 @@ import "./style.css";
 
 export default function Contacts() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  //const [utmParams, setUtmParams] = useState(null);
+  // const searchParams = useSearchParams();
+  const [utmParams, setUtmParams] = useState(null);
 
   async function Record(event) {
-    /*
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     formData.append("utm_source", utmParams.utm_source);
@@ -24,7 +23,6 @@ export default function Contacts() {
     formData.append("utm_content", utmParams.utm_content);
     formData.append("utm_placement", utmParams.utm_placement);
     formData.append("utm_region_name", utmParams.utm_region_name);
-*/ const formData = new FormData(event.currentTarget);
     const pb = await getPb();
 
     for (var pair of formData.entries()) {
