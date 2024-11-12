@@ -72,7 +72,6 @@ export default function Invest() {
 
         {open && <PresentationModal setOpen={setOpen} type={"placement"} />}
       </section>
-      <TheFooter />
     </>
   );
 }

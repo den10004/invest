@@ -23,6 +23,12 @@ body {
   font-size: 14px;
   line-height: 1.6;
   background-color: #fff;
+  /**/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
 }
 
 .logo {
@@ -707,7 +713,7 @@ section#main {
   background-color: #0b1e30;
   color: white;
   margin-bottom: 0;
-  padding-bottom: 1px;
+  /*  padding-bottom: 1px;*/
 }
 
 .shine:before {

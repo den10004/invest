@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
           <TheHeader />
           <main>{children}</main>
         </section>
+        <TheFooter />
       </body>
     </html>
   );

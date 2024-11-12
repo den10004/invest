@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getPb } from "@/lib/pb";
 import { telephone, telephoneMailto, email } from "../../lib/tel";
-import TheFooter from "@/components/TheFooter/TheFooter";
 import "./style.css";
 import { Telmask } from "@/lib/telmask";
 import { Suspense } from "react";
@@ -141,7 +140,6 @@ export default function Contacts() {
           <Form />
         </Suspense>
       </div>
-      <TheFooter />
     </>
   );
 }

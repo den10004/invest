@@ -8,7 +8,9 @@ export default function Projects() {
   const [cards, setCards] = useState([]);
 
   let cardArr = cards.data;
+  let errorMessage = cards.error;
   let pbArr = cards.pb;
+  console.log(errorMessage);
 
   useEffect(() => {
     ProjectRender().then(setCards);
@@ -18,6 +20,10 @@ export default function Projects() {
     <div id="catalogue">
       <div className="container">
         <div className="items">
+          <div style={{ background: "red" }}>
+            <h1>{errorMessage}</h1>{" "}
+          </div>
+
           {cardArr?.items?.map((item) => {
             const p = item.expand.project;
             return <Card p={p} pbArr={pbArr} key={p.id} />;

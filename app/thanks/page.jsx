@@ -1,4 +1,3 @@
-import TheFooter from "@/components/TheFooter/TheFooter";
 import Link from "next/link";
 import "./style.css";
 
@@ -22,7 +21,6 @@ export default function Thanks() {
           </Link>
         </div>
       </div>
-      <TheFooter />
     </>
   );
 }

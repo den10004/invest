@@ -1,7 +1,6 @@
 "use client";
 import ScrollToTopButton from "@/components/ScrollUp";
 import Projects from "../components/Projects/Projects";
-import TheFooter from "@/components/TheFooter/TheFooter";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
         </div>
       </div>
       <Projects />
-      <TheFooter />
       <ScrollToTopButton />
     </>
   );
