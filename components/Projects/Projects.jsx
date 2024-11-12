@@ -2,6 +2,7 @@
 import { ProjectRender } from "@/services/connect";
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import { GetBrowser, DetectOS } from "@/services/getUserDevices";
 
 export default function Projects() {
   const [cards, setCards] = useState([]);
@@ -10,35 +11,10 @@ export default function Projects() {
   let errorMessage = cards.error;
   let pbArr = cards.pb;
 
-  const c = () => {
-    const browser = (regexp) => {
-      return regexp.test(navigator.userAgent);
-    };
-    if (browser(/opr\//i) || !!window.opr) {
-      return "Opera";
-    } else if (browser(/edg/i)) {
-      return "Microsoft Edge";
-    } else if (browser(/chrome|chromium|crios/i)) {
-      return "Google Chrome";
-    } else if (browser(/firefox|fxios/i)) {
-      return "Mozilla Firefox";
-    } else if (browser(/safari/i)) {
-      return "Apple Safari";
-    } else if (browser(/trident/i)) {
-      return "Microsoft Internet Explorer";
-    } else if (browser(/ucbrowser/i)) {
-      return "UC Browser";
-    } else if (browser(/samsungbrowser/i)) {
-      return "Samsung Browser";
-    } else {
-      return "Unknown browser";
-    }
-  };
-
   useEffect(() => {
     ProjectRender().then(setCards);
-
-    console.log(c());
+    console.log(GetBrowser());
+    console.log(DetectOS());
   }, []);
 
   return (
