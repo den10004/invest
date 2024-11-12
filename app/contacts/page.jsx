@@ -8,10 +8,11 @@ import { telephone, telephoneMailto, email } from "../../lib/tel";
 import TheFooter from "@/components/TheFooter/TheFooter";
 import "./style.css";
 import { Telmask } from "@/lib/telmask";
+import { Suspense } from "react";
 
-export default function Contacts() {
+function Form() {
+  const searchParams = useSearchParams();
   const router = useRouter();
-  // const searchParams = useSearchParams();
 
   const [utmParams, setUtmParams] = useState(null);
   const phoneInput = useRef(null);
@@ -21,11 +22,9 @@ export default function Contacts() {
     Telmask(phoneEl);
   }, []);
 
-  useEffect(
-    () => {
-      // if (searchParams) {
-      // const params = Object.fromEntries(searchParams.entries());
-      const params = "";
+  useEffect(() => {
+    if (searchParams) {
+      const params = Object.fromEntries(searchParams.entries());
       const utmKeys = [
         "utm_source",
         "utm_medium",
@@ -41,12 +40,8 @@ export default function Contacts() {
       }, {});
 
       setUtmParams(filteredParams);
-      //   }
-    },
-    [
-      /*searchParams*/
-    ]
-  );
+    }
+  }, [searchParams]);
 
   async function Record(event) {
     event.preventDefault();
@@ -71,6 +66,62 @@ export default function Contacts() {
       alert("Ошибка при отправки формы");
     }
   }
+
+  return (
+    <form
+      action=""
+      method="post"
+      className="form-box flex-wrap"
+      onSubmit={Record}
+    >
+      <div className="title">У вас есть вопрос? Напишите его нам </div>
+
+      <div className="input-wr">
+        <div className="input-box">
+          <input
+            type="text"
+            name="name"
+            autoComplete="off"
+            placeholder="Как к вам обращаться"
+            required
+            minLength="2"
+            maxLength="25"
+            className="suggestions-input"
+            style={{ boxSizing: "border-box" }}
+          />
+          <div className="suggestions-wrapper">
+            <div
+              className="suggestions-suggestions"
+              style={{ display: "none" }}
+            ></div>
+          </div>
+        </div>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Номер телефона"
+          ref={phoneInput}
+          required
+        />
+        <input type="email" name="email" placeholder="Ваш e-mail" />
+      </div>
+      <textarea name="message" placeholder="Напишите свой вопрос..."></textarea>
+
+      <button className="btn btn-yellow btn-yellow big-btn">
+        Отправить сообщение
+      </button>
+      <div className="polit-descr">
+        Нажимая кнопку Отправить сообщение, я подтверждаю, что ознакомлен и
+        согласен с условиями
+        <Link href="/policy" target="_blank" className="polit">
+          политики обработки персональных данных
+        </Link>
+      </div>
+    </form>
+  );
+}
+
+export default function Contacts() {
   return (
     <>
       <div className="wrap">
@@ -85,60 +136,9 @@ export default function Contacts() {
             {email}
           </Link>
         </div>
-
-        <form
-          action=""
-          method="post"
-          className="form-box flex-wrap"
-          onSubmit={Record}
-        >
-          <div className="title">У вас есть вопрос? Напишите его нам </div>
-
-          <div className="input-wr">
-            <div className="input-box">
-              <input
-                type="text"
-                name="name"
-                autoComplete="off"
-                placeholder="Как к вам обращаться"
-                required
-                minLength="2"
-                maxLength="25"
-                className="suggestions-input"
-                style={{ boxSizing: "border-box" }}
-              />
-              <div className="suggestions-wrapper">
-                <div
-                  className="suggestions-suggestions"
-                  style={{ display: "none" }}
-                ></div>
-              </div>
-            </div>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Номер телефона"
-              ref={phoneInput}
-              required
-            />
-            <input type="email" name="email" placeholder="Ваш e-mail" />
-          </div>
-          <textarea
-            name="message"
-            placeholder="Напишите свой вопрос..."
-          ></textarea>
-
-          <button className="btn btn-yellow btn-yellow big-btn">
-            Отправить сообщение
-          </button>
-          <div className="polit-descr">
-            Нажимая кнопку Отправить сообщение, я подтверждаю, что ознакомлен и
-            согласен с условиями
-            <Link href="/policy" target="_blank" className="polit">
-              политики обработки персональных данных
-            </Link>
-          </div>
-        </form>
+        <Suspense>
+          <Form />
+        </Suspense>
       </div>
       <TheFooter />
     </>

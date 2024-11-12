@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectRender from "@/services/connect";
+import { ProjectRender } from "@/services/connect";
 import { useEffect, useState } from "react";
 import Card from "./Card";
 
