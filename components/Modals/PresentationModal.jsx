@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import "./index.css";
 import Link from "next/link";
 import { Telmask } from "@/lib/telmask";
+import { DetectOS, GetBrowser } from "@/services/getUserDevices";
 
 export default function PresentationModal({ setOpen, type, projectId }) {
   const [active, setActive] = useState("phone");
@@ -73,6 +74,8 @@ export default function PresentationModal({ setOpen, type, projectId }) {
     formData.append("utm_placement", utmParams.utm_placement);
     formData.append("utm_region_name", utmParams.utm_region_name);
     formData.append("project", projectId);
+    formData.append("platform", DetectOS());
+    formData.append("browser", GetBrowser());
 
     const pb = await getPb();
     try {

@@ -8,7 +8,7 @@ import { telephone, telephoneMailto, email } from "../../lib/tel";
 import "./style.css";
 import { Telmask } from "@/lib/telmask";
 import { Suspense } from "react";
-import requestIp from "request-ip";
+import { DetectOS, GetBrowser } from "@/services/getUserDevices";
 
 function Form() {
   const searchParams = useSearchParams();
@@ -53,6 +53,8 @@ function Form() {
     formData.append("utm_content", utmParams.utm_content);
     formData.append("utm_placement", utmParams.utm_placement);
     formData.append("utm_region_name", utmParams.utm_region_name);
+    formData.append("platform", DetectOS());
+    formData.append("browser", GetBrowser());
     const pb = await getPb();
     /*
     for (var pair of formData.entries()) {

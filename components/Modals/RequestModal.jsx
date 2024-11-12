@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import "./index.css";
 import Link from "next/link";
 import { Telmask } from "@/lib/telmask";
+import { DetectOS, GetBrowser } from "@/services/getUserDevices";
 
 export default function RequestModal({ setShowModal }) {
   const searchParams = useSearchParams();
@@ -25,6 +26,8 @@ export default function RequestModal({ setShowModal }) {
 
   useEffect(() => {
     if (searchParams) {
+      console.log(GetBrowser());
+      console.log(DetectOS());
       const params = Object.fromEntries(searchParams.entries());
       const utmKeys = [
         "utm_source",
@@ -54,7 +57,8 @@ export default function RequestModal({ setShowModal }) {
     formData.append("utm_content", utmParams.utm_content);
     formData.append("utm_placement", utmParams.utm_placement);
     formData.append("utm_region_name", utmParams.utm_region_name);
-
+    formData.append("platform", DetectOS());
+    formData.append("browser", GetBrowser());
     const pb = await getPb();
     try {
       const data = await pb.collection("orders").create(formData);

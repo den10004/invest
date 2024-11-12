@@ -13,8 +13,6 @@ export default function Projects() {
 
   useEffect(() => {
     ProjectRender().then(setCards);
-    console.log(GetBrowser());
-    console.log(DetectOS());
   }, []);
 
   return (
