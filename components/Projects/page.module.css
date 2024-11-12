@@ -118,12 +118,6 @@
 }
 
 @media screen and (max-width: 1280px) {
-
-    /*
-    .item {
-        grid-template-columns: 40% 50%;
-        grid-template-rows: 63px 93px auto;
-    }*/
     .item {
         display: flex;
         flex-direction: column;
@@ -191,6 +185,8 @@
     .item {
         display: flex;
         flex-direction: column;
+        height: 807px;
+
     }
 
     .item .footer .params {
@@ -210,9 +206,6 @@
 }
 
 @media screen and (max-width: 425px) {
-    .button {
-        width: 100%;
-    }
 
     .item .footer .button .btn-yellow {
         width: 100%;
@@ -222,5 +215,15 @@
 
     .btn.item-present {
         font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 373px) {
+    .item .description p {
+        font-size: 14px;
+    }
+
+    .item {
+        height: 776px;
     }
 }
