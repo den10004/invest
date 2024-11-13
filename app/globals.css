@@ -9,6 +9,8 @@
   --color-text-item: #222222;
   --color-text-muted: #868c91;
   --color-border-params: #edeef1;
+  --color-table: #e2f0f9;
+  ;
 }
 
 html {
@@ -23,7 +25,6 @@ body {
   font-size: 14px;
   line-height: 1.6;
   background-color: #fff;
-  /**/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
