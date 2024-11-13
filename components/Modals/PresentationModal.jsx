@@ -87,7 +87,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
     formData.append("project", projectId);
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
-    formData.append("browser", ip);
+    formData.append("ip", ip);
 
     const pb = await getPb();
     try {

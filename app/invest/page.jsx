@@ -1,76 +1,46 @@
 "use client";
 import "./style.css";
-import phone from "@/public/phones.webp";
-import icon from "@/public/icon2.webp";
-import icon2 from "@/public/icon5.webp";
-import icon3 from "@/public/icon6.webp";
 import Image from "next/image";
-
 import PresentationModal from "@/components/Modals/PresentationModal";
 import { useState } from "react";
-import TheFooter from "@/components/TheFooter/TheFooter";
 
 export default function Invest() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <section id="main" className="shine">
-        <div className="wrap" style={{ position: "relative" }}>
-          <h1 className="placing__headline">
-            Хотите привлечь инвестиции <br className="placing-br" />
-            в свой бизнес, но не знаете <br className="placing-br" />с чего
-            начать?
+      <section className="invests">
+        <div className="wrap">
+          <h1>
+            Каталог инвестиционных <br /> проектов нового поколения
           </h1>
-          <p className="pre-line">
-            Разместите свой проект в нашем каталоге и получайте целевые заявки
-            от заинтересованных инвесторов
-          </p>
           <button
-            className="btn btn-yellow big-btn btn-pdf-new openTafif"
+            className="btn btn-yellow invest-btn openTafif"
             onClick={() => setOpen(true)}
           >
-            <i className="i-download-pdf"></i> Получить презентацию
+            <i className="i-download-pdf"></i> Найти инвестора
           </button>
-          <div className="main-tr-box flex">
-            <div className="main-tr-item">
-              <div className="main-tr-item-img">
-                <Image src={icon} alt="заявки" />
-                <div className="num-small">01</div>
-              </div>
-              <p>
-                <strong>Бесплатная </strong>публикация ваших проектов
-              </p>
-            </div>
+        </div>
+      </section>
 
-            <div className="main-tr-item">
-              <div className="main-tr-item-img">
-                <Image src={icon2} alt="заявки" />
-                <div className="num-small">02</div>
-              </div>
-              <p>
-                <strong>Оплата </strong>
-                Оплата только за заявки
-              </p>
-            </div>
+      {open && <PresentationModal setOpen={setOpen} type={"placement"} />}
 
-            <div className="main-tr-item">
-              <div className="main-tr-item-img">
-                <Image src={icon3} alt="заявки" />
-                <div className="num-small">03</div>
-              </div>
+      <section className="placement">
+        <div className="placement-bg">
+          <div className="placement-container wrap">
+            <div>
+              <h3>
+                Инвест-каталог.рф <br /> — инструмент
+                <br /> для профессионалов
+              </h3>
               <p>
-                <strong>Обмен </strong>
-                некачественных заявок
+                Вы не платите за размещение в каталоге, оплата только за
+                результат - заявки от потенциальных инвесторов. Это контакт
+                заинтересованного лица в вашем городе
               </p>
             </div>
           </div>
-          <img src={phone.src} className="main-img" alt="" />
         </div>
-
-        <div className="separation"></div>
-
-        {open && <PresentationModal setOpen={setOpen} type={"placement"} />}
       </section>
     </>
   );

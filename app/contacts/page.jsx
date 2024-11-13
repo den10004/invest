@@ -64,7 +64,7 @@ function Form() {
     formData.append("utm_region_name", utmParams.utm_region_name);
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
-    formData.append("browser", ip);
+    formData.append("ip", ip);
     const pb = await getPb();
 
     try {
@@ -131,23 +131,21 @@ function Form() {
 
 export default function Contacts() {
   return (
-    <>
-      <div className="wrap">
-        <div className="page-title">Наши контакты</div>
+    <div className="wrap">
+      <div className="page-title">Наши контакты</div>
 
-        <div className="contact-box">
-          <Link href={"tel:" + telephoneMailto} className="big-phone">
-            {telephone}
-          </Link>
-          <br />
-          <Link href={"mailto:" + email} className="email-href">
-            {email}
-          </Link>
-        </div>
-        <Suspense>
-          <Form />
-        </Suspense>
+      <div className="contact-box">
+        <Link href={"tel:" + telephoneMailto} className="big-phone">
+          {telephone}
+        </Link>
+        <br />
+        <Link href={"mailto:" + email} className="email-href">
+          {email}
+        </Link>
       </div>
-    </>
+      <Suspense>
+        <Form />
+      </Suspense>
+    </div>
   );
 }

@@ -69,7 +69,7 @@ export default function RequestModal({ setShowModal }) {
     formData.append("utm_region_name", utmParams.utm_region_name);
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
-    formData.append("browser", ip);
+    formData.append("ip", ip);
     const pb = await getPb();
     try {
       const data = await pb.collection("orders").create(formData);
