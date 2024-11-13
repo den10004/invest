@@ -2,7 +2,9 @@
 import { ProjectRender } from "@/services/connect";
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import { GetBrowser, DetectOS } from "@/services/getUserDevices";
+import { GetIP, handler } from "@/services/getUserDevices";
+
+import MyComponent from "../hand";
 
 export default function Projects() {
   const [cards, setCards] = useState([]);
@@ -13,10 +15,12 @@ export default function Projects() {
 
   useEffect(() => {
     ProjectRender().then(setCards);
+    GetIP();
   }, []);
 
   return (
     <div id="catalogue">
+      <MyComponent />
       <div className="container">
         <div className="items">
           <div style={{ background: "red" }}>

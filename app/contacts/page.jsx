@@ -56,10 +56,7 @@ function Form() {
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
     const pb = await getPb();
-    /*
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ", " + pair[1]);
-    }*/
+
     try {
       const data = await pb.collection("orders").create(formData);
       router.push("/thanks");
