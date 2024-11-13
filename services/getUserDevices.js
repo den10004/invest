@@ -44,25 +44,3 @@ export const DetectOS = () => {
   }
   return os;
 };
-
-export const GetIP = () => {
-  fetch("https://api.ipify.org?format=json")
-    .then((res) => res.json())
-    .then((data) => {
-      // console.log(data.ip);
-    });
-};
-
-/*
-export function handler(req = NextRequest) {
-  const detectedIp = req.ip;
-  console.log(req.ip);
-  console.log(detectedIp);
-}*/
-/*
-export async function handler({ req }) {
-  const ip = req.headers["x-real-ip"] || req.connection.remoteAddress;
-  console.log(ip);
-  return { ip };
-}
-*/

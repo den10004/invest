@@ -5,9 +5,12 @@ import "./index.css";
 import Link from "next/link";
 import { Telmask } from "@/lib/telmask";
 import { DetectOS, GetBrowser } from "@/services/getUserDevices";
+import { GetUserIp } from "@/services/GetUserIp";
 
 export default function PresentationModal({ setOpen, type, projectId }) {
   const [active, setActive] = useState("phone");
+  const [ip, setIp] = useState();
+
   const [placeholderText, setPlaceholderText] = useState(
     "Введите номер телефона"
   );
@@ -28,6 +31,14 @@ export default function PresentationModal({ setOpen, type, projectId }) {
       setPlaceholderText("");
     }
   }, [active]);
+
+  useEffect(() => {
+    GetUserIp()
+      .then((response) => response.json())
+      .then((response) => {
+        setIp(response.ip);
+      });
+  }, []);
 
   useEffect(() => {
     let phoneEl = phoneInput.current;
@@ -76,6 +87,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
     formData.append("project", projectId);
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
+    formData.append("browser", ip);
 
     const pb = await getPb();
     try {

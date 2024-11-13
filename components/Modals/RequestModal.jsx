@@ -5,11 +5,21 @@ import "./index.css";
 import Link from "next/link";
 import { Telmask } from "@/lib/telmask";
 import { DetectOS, GetBrowser } from "@/services/getUserDevices";
+import { GetUserIp } from "@/services/GetUserIp";
 
 export default function RequestModal({ setShowModal }) {
   const searchParams = useSearchParams();
+  const [ip, setIp] = useState();
   const [utmParams, setUtmParams] = useState(null);
   const phoneInput = useRef(null);
+
+  useEffect(() => {
+    GetUserIp()
+      .then((response) => response.json())
+      .then((response) => {
+        setIp(response.ip);
+      });
+  }, []);
 
   useEffect(() => {
     let phoneEl = phoneInput.current;
@@ -59,6 +69,7 @@ export default function RequestModal({ setShowModal }) {
     formData.append("utm_region_name", utmParams.utm_region_name);
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
+    formData.append("browser", ip);
     const pb = await getPb();
     try {
       const data = await pb.collection("orders").create(formData);

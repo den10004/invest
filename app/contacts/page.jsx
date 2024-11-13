@@ -9,17 +9,26 @@ import "./style.css";
 import { Telmask } from "@/lib/telmask";
 import { Suspense } from "react";
 import { DetectOS, GetBrowser } from "@/services/getUserDevices";
+import { GetUserIp } from "@/services/GetUserIp";
 
 function Form() {
   const searchParams = useSearchParams();
   const router = useRouter();
-
+  const [ip, setIp] = useState();
   const [utmParams, setUtmParams] = useState(null);
   const phoneInput = useRef(null);
 
   useEffect(() => {
     let phoneEl = phoneInput.current;
     Telmask(phoneEl);
+  }, []);
+
+  useEffect(() => {
+    GetUserIp()
+      .then((response) => response.json())
+      .then((response) => {
+        setIp(response.ip);
+      });
   }, []);
 
   useEffect(() => {
@@ -55,6 +64,7 @@ function Form() {
     formData.append("utm_region_name", utmParams.utm_region_name);
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
+    formData.append("browser", ip);
     const pb = await getPb();
 
     try {
@@ -74,7 +84,6 @@ function Form() {
       onSubmit={Record}
     >
       <div className="title">У вас есть вопрос? Напишите его нам </div>
-
       <div className="input-wr">
         <div className="input-box">
           <input
