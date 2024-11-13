@@ -11,7 +11,7 @@ function MyComponent() {
       .then((data) => setIp(data.ip));
   }, []);
 
-  return <div>IP адрес пользователя: {ip}</div>;
+  return <div style={{ color: "red" }}>IP адрес пользователя: {ip}</div>;
 }
 
 export default MyComponent;
