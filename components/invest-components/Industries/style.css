@@ -4,30 +4,31 @@
 }
 
 .industries__list {
-    margin-top: 100px;
+    margin: 100px auto 0 auto;
     display: flex;
+    width: 1480px;
     flex-wrap: wrap;
 }
 
 .industries__list li {
-    margin: 0 40px 40px 0;
+    margin: 0 20px 40px 0;
 }
 
 .industries__list>li div {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.2;
     text-align: left;
 }
 
 .industries__list>li>div img {
-    margin-right: 20px;
+    margin-right: 10px;
     width: 24px;
 }
 
 .ml {
-    margin-left: 100px;
+    margin-left: 60px;
 }
 
 @media screen and (max-width: 1280px) {
