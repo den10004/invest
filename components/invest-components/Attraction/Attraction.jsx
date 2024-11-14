@@ -35,7 +35,7 @@ export default function Attraction() {
         <span className="img-1">113 000</span>
         <span className="img-2">1 691</span>
         <span className="img-3">1 050 000</span>
-        <Image src={graph} />
+        <Image src={graph} alt="фон" />
         <div className="att-table">
           <h5 className="paragraph-p"> Итого привлеченных инвестиций:</h5>
           <p> 1 691 х 1 055 000 = 1 784 005 000 рублей</p>

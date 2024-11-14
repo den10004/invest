@@ -90,7 +90,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <Image src={graph} />
+        <Image src={graph} alt="фон" />
       </div>
     </section>
   );

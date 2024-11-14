@@ -5,6 +5,7 @@ import { useState } from "react";
 import Placement from "@/components/invest-components/Placement/Placement";
 import Attraction from "@/components/invest-components/Attraction/Attraction";
 import AboutUs from "@/components/invest-components/AboutUs/AboutUs";
+import ForWhom from "@/components/invest-components/ForWhom/ForWhom";
 
 export default function Invest() {
   const [open, setOpen] = useState(false);
@@ -30,6 +31,7 @@ export default function Invest() {
       <Placement />
       <Attraction />
       <AboutUs />
+      <ForWhom />
     </>
   );
 }
