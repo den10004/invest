@@ -5,7 +5,7 @@ import graph from "../../../public/graph.webp";
 
 export default function Attraction() {
   return (
-    <section className="attraction">
+    <section className="attraction paddingblock">
       <div className="wrap">
         <h3 className="headline-h3">
           Привлекли инвесторов <br /> на 1,78 млрд рублей

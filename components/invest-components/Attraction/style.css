@@ -1,7 +1,6 @@
 .attraction {
     background: rgb(12, 54, 122);
     background: radial-gradient(circle, rgba(12, 54, 122, 1) 0%, rgba(2, 0, 36, 1) 80%);
-    padding-top: 160px;
 }
 
 .attraction__content {
@@ -90,9 +89,6 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .attraction {
-        padding-top: 100px;
-    }
 
     .att-table {
         width: 945px;
@@ -180,9 +176,7 @@
         top: 77%;
     }
 
-    .attraction {
-        padding-top: 80px;
-    }
+
 
     .attraction__content {
         margin-top: 40px;
@@ -236,6 +230,9 @@
 
 
 @media screen and (max-width:425px) {
+
+
+
     .attraction__content {
         margin-top: 10px;
     }
@@ -266,6 +263,8 @@
         top: 63px;
         right: 6%;
     }
+
+
 }
 
 @media screen and (max-width:400px) {
