@@ -129,7 +129,7 @@
 @media screen and (max-width: 1000px) {
     .att-table {
         width: 80%;
-        padding: 20px 0;
+        padding: 20px 10px;
         top: 60%;
     }
 
@@ -175,6 +175,11 @@
 
 
 @media screen and (max-width: 768px) {
+    .att-table {
+        padding: 10px;
+        top: 77%;
+    }
+
     .attraction {
         padding-top: 80px;
     }
@@ -197,8 +202,8 @@
     }
 
     .img-1 {
-        top: 70px;
-        left: 13%;
+        top: 59px;
+        left: 11%;
     }
 
     .img-2 {
@@ -207,26 +212,42 @@
     }
 
     .img-3 {
-        top: 75px;
-        right: 9%;
-    }
-
-}
-
-@media screen and (max-width: 768px) {
-    .img-1 {
-        top: 59px;
-        left: 11%;
-    }
-
-    .img-3 {
         top: 69px;
         right: 7%;
     }
+
+    .att-table>h5 {
+        font-size: 16px !important;
+    }
+
+    .att-table>p {
+        font-size: 16px;
+    }
+
+    .att-table>div {
+        font-size: 9px;
+    }
+
+    .att-table>div br {
+        display: none;
+    }
 }
 
 
+
 @media screen and (max-width:425px) {
+    .attraction__content {
+        margin-top: 10px;
+    }
+
+    .paragraph-p {
+        font-size: 14px;
+    }
+
+    .attraction__content>div>p>span {
+        font-size: 26px;
+    }
+
     .attraction-img>span {
         font-size: 18px;
     }
@@ -244,5 +265,25 @@
     .img-3 {
         top: 63px;
         right: 6%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .att-table>p {
+        font-size: 12px;
+    }
+
+    .att-table>h5 {
+        font-size: 14px !important;
+    }
+
+    .att-table>div {
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width:374px) {
+    .att-table>h5 {
+        font-size: 12px !important;
     }
 }
