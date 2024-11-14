@@ -1,0 +1,44 @@
+.industries {
+    background: rgb(12, 54, 122);
+    background: radial-gradient(circle, rgba(12, 54, 122, 1) 0%, rgba(2, 0, 36, 1) 80%);
+}
+
+.industries__list {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.industries__list li {
+    margin: 0 40px 40px 0;
+}
+
+.industries__list>li div {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.industries__list>li>div img {
+    margin-right: 20px;
+    width: 24px;
+}
+
+.ml {
+    margin-left: 100px;
+}
+
+@media screen and (max-width: 1280px) {
+    .industries__list {
+        margin-top: 50px;
+    }
+}
+
+
+@media screen and (max-width: 845px) {
+    .industries__list {
+        margin-top: 30px;
+    }
+}

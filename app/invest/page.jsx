@@ -6,6 +6,7 @@ import Placement from "@/components/invest-components/Placement/Placement";
 import Attraction from "@/components/invest-components/Attraction/Attraction";
 import AboutUs from "@/components/invest-components/AboutUs/AboutUs";
 import ForWhom from "@/components/invest-components/ForWhom/ForWhom";
+import Industries from "@/components/invest-components/Industries/Industries";
 
 export default function Invest() {
   const [open, setOpen] = useState(false);
@@ -32,6 +33,7 @@ export default function Invest() {
       <Attraction />
       <AboutUs />
       <ForWhom />
+      <Industries />
     </>
   );
 }
