@@ -24,7 +24,7 @@ export default function Invest() {
             className="btn btn-yellow invest-btn openTafif"
             onClick={() => setOpen(true)}
           >
-            <i className="i-download-pdf"></i> Найти инвестора
+            Найти инвестора
           </button>
         </div>
       </section>

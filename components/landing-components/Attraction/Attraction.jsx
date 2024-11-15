@@ -1,5 +1,5 @@
 import "./style.css";
-import "../style.css";
+import "./../style.css";
 import Image from "next/image";
 import graph from "../../../public/graph.webp";
 
@@ -31,6 +31,7 @@ export default function Attraction() {
           </div>
         </div>
       </div>
+
       <div className="attraction-img">
         <span className="img-1">113 000</span>
         <span className="img-2">1 691</span>

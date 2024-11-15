@@ -103,6 +103,9 @@ textarea::placeholder {
   padding-top: 1px;
 }
 
+img {
+  vertical-align: middle;
+}
 
 h1 {
   font-size: 74px;
