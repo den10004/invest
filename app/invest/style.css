@@ -2,11 +2,9 @@
     background: url(../../public/bg.webp);
     background-position: 0% 0%;
     background-repeat: no-repeat;
-}
-
-.invests {
     height: 800px;
 }
+
 
 .invests>div>h1 {
     margin: 0 !important;
