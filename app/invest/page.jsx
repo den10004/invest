@@ -1,7 +1,7 @@
 "use client";
 import "./style.css";
-import PresentationModal from "@/components/Modals/PresentationModal";
 import { useState } from "react";
+import PresentationModal from "@/components/Modals/PresentationModal";
 import Placement from "@/components/landing-components/Placement/Placement";
 import Attraction from "@/components/landing-components/Attraction/Attraction";
 import AboutUs from "@/components/landing-components/AboutUs/AboutUs";
@@ -24,7 +24,7 @@ export default function Invest() {
             className="btn btn-yellow invest-btn openTafif"
             onClick={() => setOpen(true)}
           >
-            Найти инвестора
+            <i className="i-download-pdf"></i> Найти инвестора
           </button>
         </div>
       </section>

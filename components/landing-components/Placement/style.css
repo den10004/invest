@@ -57,8 +57,16 @@
 
     .placement-bg {
         background-position: calc(10vw + 520px) -175px;
+        height: 600px;
     }
 
+}
+
+
+@media screen and (max-width: 600px) {
+    .placement-bg {
+        background-position: calc(10vw + 417px) -175px;
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -66,4 +74,17 @@
         width: 100%;
     }
 
+    .placement-bg {
+        background-position: calc(10vw + 454px) -176px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .placement-bg {
+        height: 400px;
+    }
+
+    .placement-container {
+        padding-top: 40px;
+    }
 }
