@@ -2,12 +2,13 @@
 import "./style.css";
 import PresentationModal from "@/components/Modals/PresentationModal";
 import { useState } from "react";
-import Placement from "@/components/invest-components/Placement/Placement";
-import Attraction from "@/components/invest-components/Attraction/Attraction";
-import AboutUs from "@/components/invest-components/AboutUs/AboutUs";
-import ForWhom from "@/components/invest-components/ForWhom/ForWhom";
-import Industries from "@/components/invest-components/Industries/Industries";
-import Why from "@/components/invest-components/Why/Why";
+import Placement from "@/components/landing-components/Placement/Placement";
+import Attraction from "@/components/landing-components/Attraction/Attraction";
+import AboutUs from "@/components/landing-components/AboutUs/AboutUs";
+import ForWhom from "@/components/landing-components/ForWhom/ForWhom";
+import Industries from "@/components/landing-components/Industries/Industries";
+import Why from "@/components/landing-components/Why/Why";
+import Banner from "@/components/landing-components/Banner/Banner";
 
 export default function Invest() {
   const [open, setOpen] = useState(false);
@@ -36,6 +37,7 @@ export default function Invest() {
       <ForWhom />
       <Industries />
       <Why />
+      <Banner />
     </>
   );
 }

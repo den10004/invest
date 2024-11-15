@@ -1,5 +1,5 @@
 import "./style.css";
-import "./../style.css";
+import "../style.css";
 import Image from "next/image";
 import forWhom from "../../../public/forWhom.webp";
 

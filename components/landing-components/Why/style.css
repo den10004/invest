@@ -1,6 +1,7 @@
 .why {
     background-color: var(--color-table);
     color: var(--color-text-item);
+    padding: 150px 0 100px 0;
 }
 
 .why>div>h3 {
@@ -41,6 +42,10 @@
     margin-bottom: 45px;
 }
 
+
+
+
+
 @media (max-width: 1570px) {
     .block__text {
         padding: 65px;
@@ -54,6 +59,14 @@
         width: calc(100% - 684px);
     }
 }
+
+@media screen and (max-width: 1400px) {
+    .why {
+        padding-bottom: 100px 0 100px 0;
+    }
+}
+
+
 
 @media (max-width: 1280px) {
     .block__text>h4 {
@@ -113,6 +126,11 @@
 }
 
 @media (max-width: 768px) {
+
+    .why {
+        padding: 60px 0 60px 0;
+    }
+
     .content__block {
         flex-direction: column;
     }
@@ -144,5 +162,11 @@
 
     .block__text>p {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .why {
+        padding: 30px 0 30px 0;
     }
 }

@@ -1,5 +1,5 @@
 import "./style.css";
-import "./../style.css";
+import "../style.css";
 import Image from "next/image";
 import graph from "../../../public/graph1.webp";
 import eye from "../../../public/eye.png";
@@ -30,7 +30,7 @@ export default function AboutUs() {
         <div className="aboutUs__count count1">
           <div className="count__second">
             <div>
-              <Image src={eye} />
+              <Image src={eye} alt="иконка" />
               <p className="block-style">
                 <span>3 295 341 </span>
                 <br />
@@ -38,7 +38,7 @@ export default function AboutUs() {
               </p>
             </div>
             <div>
-              <Image src={mail} />
+              <Image src={mail} alt="иконка" />
               <p className="block-style">
                 <span>7 720 </span>
                 <br />
@@ -51,7 +51,7 @@ export default function AboutUs() {
         <div className="aboutUs__count count2">
           <div className="count__second">
             <div>
-              <Image src={eye} />
+              <Image src={eye} alt="иконка" />
               <p className="block-style">
                 <span>3 890 753 </span>
                 <br />
@@ -59,7 +59,7 @@ export default function AboutUs() {
               </p>
             </div>
             <div>
-              <Image src={mail} />
+              <Image src={mail} alt="иконка" />
               <p className="block-style">
                 <span>78 214 </span>
                 <br />
@@ -72,7 +72,7 @@ export default function AboutUs() {
         <div className="aboutUs__count count3">
           <div className="count__second">
             <div>
-              <Image src={eye} />
+              <Image src={eye} alt="иконка" />
               <p className="block-style">
                 <span>3 456 026 </span>
                 <br />
@@ -80,7 +80,7 @@ export default function AboutUs() {
               </p>
             </div>
             <div>
-              <Image src={mail} />
+              <Image src={mail} alt="иконка" />
               <p className="block-style">
                 <span>10 122 </span>
                 <br />

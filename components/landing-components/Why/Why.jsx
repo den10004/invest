@@ -1,5 +1,5 @@
 import "./style.css";
-import "./../style.css";
+import "../style.css";
 import Image from "next/image";
 import why from "../../../public/why.webp";
 import why1400 from "../../../public/why1400.webp";
