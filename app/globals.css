@@ -18,9 +18,25 @@ html {
 }
 
 
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../font/Gilroy-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../font/Gilroy-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
 body {
   background-color: var(--color-body);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Gilroy', sans-serif;
   margin: 0;
   font-size: 14px;
   line-height: 1.6;

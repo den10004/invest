@@ -109,6 +109,12 @@
 
 
 @media screen and (max-width: 1280px) {
+    .att-table {
+        position: absolute;
+        top: 60%;
+        padding: 30px 0;
+    }
+
     .attraction-img>img {
         height: 80%;
     }
@@ -124,22 +130,6 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .att-table {
-        width: 80%;
-        padding: 20px 10px;
-        top: 60%;
-    }
-
-    .att-table>p {
-        font-size: 30px;
-    }
-
-    .att-table>div {
-        font-size: 12px;
-
-    }
-}
 
 @media screen and (max-width: 1100px) {
     .img-1 {
@@ -171,14 +161,28 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .att-table {
+        width: 80%;
+        padding: 20px 10px;
+        top: 60%;
+    }
+
+    .att-table>p {
+        font-size: 30px;
+    }
+
+    .att-table>div {
+        font-size: 12px;
+
+    }
+}
 
 @media screen and (max-width: 768px) {
     .att-table {
         padding: 10px;
         top: 77%;
     }
-
-
 
     .attraction__content {
         margin-top: 40px;
@@ -229,12 +233,13 @@
     }
 }
 
-
+@media screen and (max-width:550px) {
+    .attraction-img>img {
+        height: 200px;
+    }
+}
 
 @media screen and (max-width:425px) {
-
-
-
     .attraction__content {
         margin-top: 10px;
     }
