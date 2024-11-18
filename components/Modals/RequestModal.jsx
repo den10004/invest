@@ -3,7 +3,7 @@ import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
 import "./index.css";
 import Link from "next/link";
-import { Telmask } from "@/lib/telmask";
+import { Telmask, pasteCallback } from "@/lib/telmask";
 import { DetectOS, GetBrowser } from "@/services/getUserDevices";
 import { GetUserIp } from "@/services/GetUserIp";
 
@@ -12,6 +12,27 @@ export default function RequestModal({ setShowModal }) {
   const [ip, setIp] = useState();
   const [utmParams, setUtmParams] = useState(null);
   const phoneInput = useRef(null);
+  const [buttonEnabled, setbuttonEnabled] = useState(false);
+
+  const ToggleBtn = (value) => {
+    if (value.length === 13) {
+      setbuttonEnabled(true);
+    } else {
+      setbuttonEnabled(false);
+    }
+  };
+
+  const checkPhoneInput = (event) => {
+    const { name, value } = event.target;
+    Telmask(event);
+    ToggleBtn(value);
+  };
+
+  const checkPhonePaste = (event) => {
+    const { name, value } = event.target;
+    pasteCallback(event);
+    ToggleBtn(value);
+  };
 
   useEffect(() => {
     GetUserIp()
@@ -23,7 +44,7 @@ export default function RequestModal({ setShowModal }) {
 
   useEffect(() => {
     let phoneEl = phoneInput.current;
-    Telmask(phoneEl);
+    Telmask({ target: phoneEl });
     function handleEscapeKey(event) {
       if (event.code === "Escape") {
         setShowModal(false);
@@ -114,9 +135,14 @@ export default function RequestModal({ setShowModal }) {
                 ref={phoneInput}
                 name="phone"
                 placeholder="Введите номер телефона"
+                onChange={checkPhoneInput}
+                onPaste={checkPhonePaste}
               />
             </div>
-            <button id="captcha1" className="btn submit btn-yellow big-btn">
+            <button
+              className="btn submit btn-yellow big-btn"
+              disabled={!buttonEnabled}
+            >
               Разместить проект
             </button>
             <div className="polit-descr">

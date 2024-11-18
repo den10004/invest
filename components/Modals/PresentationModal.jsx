@@ -3,12 +3,14 @@ import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
 import "./index.css";
 import Link from "next/link";
-import { Telmask } from "@/lib/telmask";
+import { Telmask, pasteCallback } from "@/lib/telmask";
 import { DetectOS, GetBrowser } from "@/services/getUserDevices";
 import { GetUserIp } from "@/services/GetUserIp";
 
 export default function PresentationModal({ setOpen, type, projectId }) {
   const [active, setActive] = useState("phone");
+  const [buttonEnabled, setbuttonEnabled] = useState(false);
+  const sendButton = useRef(null);
   const [ip, setIp] = useState();
 
   const [placeholderText, setPlaceholderText] = useState(
@@ -32,6 +34,30 @@ export default function PresentationModal({ setOpen, type, projectId }) {
     }
   }, [active]);
 
+  const ToggleBtn = (value) => {
+    if (value.length === 13) {
+      setbuttonEnabled(true);
+    } else {
+      setbuttonEnabled(false);
+    }
+  };
+
+  const checkPhoneInput = (event) => {
+    if (placeholderText === "Введите номер телефона") {
+      const { name, value } = event.target;
+      Telmask(event);
+      ToggleBtn(value);
+    }
+  };
+
+  const checkPhonePaste = (event) => {
+    if (placeholderText === "Введите номер телефона") {
+      const { name, value } = event.target;
+      pasteCallback(event);
+      ToggleBtn(value);
+    }
+  };
+
   useEffect(() => {
     GetUserIp()
       .then((response) => response.json())
@@ -42,7 +68,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
 
   useEffect(() => {
     let phoneEl = phoneInput.current;
-    Telmask(phoneEl);
+    Telmask({ target: phoneEl });
     function HandleEscapeKey(event) {
       if (event.code === "Escape") {
         setOpen(false);
@@ -242,6 +268,8 @@ export default function PresentationModal({ setOpen, type, projectId }) {
               placeholder={placeholderText}
               ref={phoneInput}
               data-phone-pattern
+              onChange={checkPhoneInput}
+              onPaste={checkPhonePaste}
             />
           )}
           {active === "email" && (
@@ -249,8 +277,10 @@ export default function PresentationModal({ setOpen, type, projectId }) {
           )}
 
           <button
+            ref={sendButton}
             className="btn-yellow btn-yellow big-btn"
             style={{ width: "100%", textAlign: "center" }}
+            disabled={!buttonEnabled}
           >
             {type === "placement" && <i className="i-download-pdf"></i>}
             Получить презентацию

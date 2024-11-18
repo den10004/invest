@@ -55,6 +55,8 @@
 
 .attraction-img>img {
     width: 100%;
+    height: auto;
+
 }
 
 .att-table {

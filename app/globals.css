@@ -80,33 +80,38 @@ button {
   border: none;
 }
 
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
 input {
   border: none;
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #8b9094;
+  color: var(--color-text-muted);
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #8b9094;
+  color: var(--color-text-muted);
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #8b9094;
+  color: var(--color-text-muted);
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  color: #8b9094;
+  color: var(--color-text-muted);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #8b9094;
+  color: var(--color-text-muted);
 }
 
 .container {
@@ -281,6 +286,16 @@ nav ul {
 .btn-yellow:active {
   box-shadow: inset 0 5px 4px rgb(0 0 0 / 34%);
   background: linear-gradient(180deg, #ffc013, #f9e95b);
+}
+
+.btn-yellow:hover {
+  box-shadow: none;
+}
+
+.btn-yellow:disabled {
+  background-color: var(--color-table);
+  box-shadow: 0 0 14px var(--color-table);
+  border-bottom: 3px solid var(--color-table);
 }
 
 a.hover-underline {
@@ -797,9 +812,7 @@ h1+p {
     line-height: 146%;
     margin-bottom: 32px;
   }
-
 }
-
 
 .container {
   .container {
@@ -808,16 +821,11 @@ h1+p {
   }
 }
 
-
-
-
 @media (max-width: 1170px) {
   .pre-line {
     width: 592px;
   }
 }
-
-
 
 @media screen and (max-width: 640px) {
   .pre-line {

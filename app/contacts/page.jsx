@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { getPb } from "@/lib/pb";
 import { telephone, telephoneMailto, email } from "../../lib/tel";
 import "./style.css";
-import { Telmask } from "@/lib/telmask";
+import { Telmask, pasteCallback } from "@/lib/telmask";
 import { Suspense } from "react";
 import { DetectOS, GetBrowser } from "@/services/getUserDevices";
 import { GetUserIp } from "@/services/GetUserIp";
@@ -17,10 +17,31 @@ function Form() {
   const [ip, setIp] = useState();
   const [utmParams, setUtmParams] = useState(null);
   const phoneInput = useRef(null);
+  const [buttonEnabled, setbuttonEnabled] = useState(false);
+
+  const ToggleBtn = (value) => {
+    if (value.length === 13) {
+      setbuttonEnabled(true);
+    } else {
+      setbuttonEnabled(false);
+    }
+  };
+
+  const checkPhoneInput = (event) => {
+    const { name, value } = event.target;
+    Telmask(event);
+    ToggleBtn(value);
+  };
+
+  const checkPhonePaste = (event) => {
+    const { name, value } = event.target;
+    pasteCallback(event);
+    ToggleBtn(value);
+  };
 
   useEffect(() => {
     let phoneEl = phoneInput.current;
-    Telmask(phoneEl);
+    Telmask({ target: phoneEl });
   }, []);
 
   useEffect(() => {
@@ -109,6 +130,8 @@ function Form() {
           name="phone"
           placeholder="Номер телефона"
           ref={phoneInput}
+          onChange={checkPhoneInput}
+          onPaste={checkPhonePaste}
           required
         />
         <input type="email" name="email" placeholder="Ваш e-mail" required />
@@ -119,7 +142,10 @@ function Form() {
         required
       ></textarea>
 
-      <button className="btn btn-yellow btn-yellow big-btn">
+      <button
+        className="btn btn-yellow btn-yellow big-btn"
+        disabled={!buttonEnabled}
+      >
         Отправить сообщение
       </button>
       <div className="polit-descr">
