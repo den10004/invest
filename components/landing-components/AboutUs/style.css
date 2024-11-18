@@ -1,6 +1,8 @@
 .aboutUs {
     background-color: #e2f0f9;
     color: var(--color-text-item);
+    max-width: 1920px;
+    margin: 0 auto;
 
 }
 

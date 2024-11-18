@@ -1,1 +1,3 @@
-{}
+{
+  "/api/ip": "pages/api/ip.js"
+}

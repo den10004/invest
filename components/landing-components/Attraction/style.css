@@ -1,6 +1,8 @@
 .attraction {
     background: rgb(12, 54, 122);
     background: radial-gradient(circle, rgba(12, 54, 122, 1) 0%, rgba(2, 0, 36, 1) 80%);
+    max-width: 1920px;
+    margin: auto;
 }
 
 .attraction__content {

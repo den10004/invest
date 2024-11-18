@@ -1,6 +1,9 @@
 .placement {
     background-color: var(--color-text-header);
     color: var(--color-text-item);
+    max-width: 1920px;
+    margin: 0 auto;
+
 
 }
 
