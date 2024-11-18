@@ -249,12 +249,10 @@ export default function PresentationModal({ setOpen, type, projectId }) {
           )}
 
           <button
-            className="btn-yellow btn-yellow big-btn btn-pdf-new"
+            className="btn-yellow btn-yellow big-btn"
             style={{ width: "100%", textAlign: "center" }}
           >
             {type === "placement" && <i className="i-download-pdf"></i>}
-            {/*
-                className="btn submit">*/}
             Получить презентацию
           </button>
 

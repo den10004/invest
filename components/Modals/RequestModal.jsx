@@ -36,8 +36,6 @@ export default function RequestModal({ setShowModal }) {
 
   useEffect(() => {
     if (searchParams) {
-      console.log(GetBrowser());
-      console.log(DetectOS());
       const params = Object.fromEntries(searchParams.entries());
       const utmKeys = [
         "utm_source",

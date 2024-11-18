@@ -91,3 +91,13 @@
         padding-top: 40px;
     }
 }
+
+@media screen and (max-width: 425px) {
+    .placement-bg {
+        height: 300px;
+    }
+
+    .placement-container>div>p {
+        margin-top: 30px;
+    }
+}

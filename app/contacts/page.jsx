@@ -111,9 +111,13 @@ function Form() {
           ref={phoneInput}
           required
         />
-        <input type="email" name="email" placeholder="Ваш e-mail" />
+        <input type="email" name="email" placeholder="Ваш e-mail" required />
       </div>
-      <textarea name="message" placeholder="Напишите свой вопрос..."></textarea>
+      <textarea
+        name="message"
+        placeholder="Напишите свой вопрос..."
+        required
+      ></textarea>
 
       <button className="btn btn-yellow btn-yellow big-btn">
         Отправить сообщение
