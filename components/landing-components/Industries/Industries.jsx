@@ -33,7 +33,7 @@ export default function Industries() {
 
         <button
           className="btn btn-yellow invest-btn openTafif"
-          onClick={() => setOpen(true)}
+          onClick={() => setShowModal(true)}
         >
           Найти инвесторов
         </button>

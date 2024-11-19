@@ -282,7 +282,6 @@ export default function PresentationModal({ setOpen, type, projectId }) {
             style={{ width: "100%", textAlign: "center" }}
             disabled={!buttonEnabled}
           >
-            {type === "placement" && <i className="i-download-pdf"></i>}
             Получить презентацию
           </button>
 
