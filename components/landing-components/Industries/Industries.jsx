@@ -1,3 +1,4 @@
+"use client";
 import "./style.css";
 import "../style.css";
 import { industriesArr } from "@/lib/industriesArr";
@@ -9,9 +10,9 @@ export default function Industries() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <section className="industries paddingblock">
+    <section className="industries paddingblock" style={{ color: "white" }}>
       <div className="wrap">
-        <h3 className="headline-h3">
+        <h3 className="headline-h3" style={{ color: "white" }}>
           Привлекаем инвесторов для различных отраслей
         </h3>
 

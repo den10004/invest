@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function Banner() {
   const [open, setOpen] = useState(false);
   return (
-    <section className="banner">
+    <section className="banner" style={{ color: "white" }}>
       <div className="banner__block">
         <div className="wrap">
           <h1>

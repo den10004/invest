@@ -48,6 +48,10 @@ body {
 
 }
 
+.main-bg {
+  background-image: url(../public/bg.webp);
+}
+
 .logo {
   font-weight: 600;
   font-size: 26px;

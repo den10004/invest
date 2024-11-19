@@ -6,8 +6,8 @@ import graph from "../../../public/graph.webp";
 export default function Attraction() {
   return (
     <section className="attraction paddingblock">
-      <div className="wrap">
-        <h3 className="headline-h3">
+      <div className="wrap" style={{ color: "white" }}>
+        <h3 className="headline-h3" style={{ color: "white" }}>
           Привлекли инвесторов <br /> на 1,78 млрд рублей
         </h3>
 
