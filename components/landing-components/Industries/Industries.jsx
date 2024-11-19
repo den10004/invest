@@ -2,8 +2,11 @@ import "./style.css";
 import "../style.css";
 import { industriesArr } from "@/lib/industriesArr";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Industries() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section className="industries paddingblock">
       <div className="wrap">
@@ -26,6 +29,16 @@ export default function Industries() {
             </li>
           ))}
         </ul>
+
+        <button
+          className="btn btn-yellow invest-btn openTafif"
+          onClick={() => setOpen(true)}
+        >
+          Найти инвесторов
+        </button>
+        {showModal && (
+          <Request setShowModal={setShowModal} showModal={showModal} />
+        )}
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ export default function ForWhom() {
     <section className="forWhom">
       <div className="forWhom__content">
         <div className="paddingblock">
-          <h3 className="headline-h3">Для кого наш каталог </h3>
+          <h3 className="headline-h3">Для кого наш каталог? </h3>
           <p className="block-style">
             Наш каталог идеально подойдёт для компаний и предпринимателей,
             которые хотят привлечь ивестиции для развития своего бизнеса или

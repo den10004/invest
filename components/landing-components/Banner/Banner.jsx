@@ -11,7 +11,7 @@ export default function Banner() {
       <div className="banner__block">
         <div className="wrap">
           <h1>
-            Свяжитесь с нами <br /> для публикации <br /> инвест-проекта <br />
+            Свяжитесь с нами <br /> для публикации <br /> инвест-проекта <br />в
             каталоге PLATFORMA
           </h1>
 

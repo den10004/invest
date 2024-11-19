@@ -8,6 +8,8 @@ export const metadata = {
   description: "Инвест",
 };
 
+/*Размещение проектов  каталоге*/
+
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">

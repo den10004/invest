@@ -292,11 +292,6 @@ nav ul {
   box-shadow: none;
 }
 
-.btn-yellow:disabled {
-  background-color: var(--color-table);
-  box-shadow: 0 0 14px var(--color-table);
-  border-bottom: 3px solid var(--color-table);
-}
 
 a.hover-underline {
   position: relative;
