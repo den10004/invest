@@ -364,10 +364,18 @@ textarea {
 
 @media (max-width: 1620px) {
   .wrap {
-    width: 100%;
+    max-width: 1170px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .wrap {
+    max-width: 100%;
     padding: 0 20px;
   }
 }
+
 
 html {
   box-sizing: border-box;
@@ -764,10 +772,7 @@ section#main {
   box-shadow: 0 0 196px 323px rgba(87, 157, 236, 0.25);
 }
 
-.pre-line {
-  white-space: pre-line;
-  width: 63%;
-}
+
 
 h1+p {
   white-space: normal;
@@ -813,17 +818,5 @@ h1+p {
   .container {
     max-width: 1530px;
     margin: 0 auto;
-  }
-}
-
-@media (max-width: 1170px) {
-  .pre-line {
-    width: 592px;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .pre-line {
-    width: 100%;
   }
 }
