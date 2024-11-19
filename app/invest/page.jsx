@@ -8,30 +8,39 @@ import ForWhom from "@/components/landing-components/ForWhom/ForWhom";
 import Industries from "@/components/landing-components/Industries/Industries";
 import Why from "@/components/landing-components/Why/Why";
 import Banner from "@/components/landing-components/Banner/Banner";
-import RequestModal from "@/components/Modals/RequestModal";
+import PresentationModal from "@/components/Modals/PresentationModal";
+import phone from "@/public/phones.webp";
 
 export default function Invest() {
-  const [showModal, setShowModal] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <section className="invests">
-        <div className="wrap">
-          <h1>
-            Каталог инвестиционных <br /> проектов нового поколения
+      <section id="main" className="shine">
+        <div className="wrap" style={{ position: "relative" }}>
+          <h1 className="placing__headline">
+            Хотите привлечь инвестиции <br className="placing-br" />
+            в свой бизнес, но не знаете <br className="placing-br" />с чего
+            начать?
           </h1>
+          <p className="pre-line">
+            Разместите свой проект в нашем каталоге и получайте целевые заявки
+            от заинтересованных инвесторов
+          </p>
           <button
-            className="btn btn-yellow invest-btn openTafif"
-            onClick={() => setShowModal(true)}
+            className="btn btn-yellow big-btn btn-pdf-new openTafif"
+            onClick={() => setOpen(true)}
           >
-            Разместите проект
+            <i className="i-download-pdf"></i> Получить презентацию
           </button>
+
+          <img src={phone.src} className="main-img" alt="" />
         </div>
+
+        <div className="separation"></div>
       </section>
 
-      {showModal && (
-        <RequestModal setShowModal={setShowModal} showModal={showModal} />
-      )}
+      {open && <PresentationModal setOpen={setOpen} type={"presentation"} />}
       <Placement />
       <Attraction />
       <AboutUs />
