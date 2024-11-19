@@ -18,7 +18,7 @@ export default function Projects() {
     <div id="catalogue">
       <div className="container">
         <div className="items">
-          <div style={{ background: "red" }}>
+          <div>
             <h1>{errorMessage}</h1>{" "}
           </div>
 

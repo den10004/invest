@@ -39,11 +39,15 @@ export default function Card({ p, pbArr }) {
             <div className={styles.footer}>
               <ul className={styles.params}>
                 <li>
-                  <div className={styles.label}>Инвестиции</div>
+                  <strong>
+                    <div className={styles.label}>Инвестиции</div>
+                  </strong>
                   <div className={styles.value}>{p.invest}</div>
                 </li>
                 <li>
-                  <div className={styles.label}>Доходность *</div>
+                  <strong>
+                    <div className={styles.label}>Доходность *</div>
+                  </strong>
                   <div className={styles.value}>{p.profit}</div>
                 </li>
               </ul>

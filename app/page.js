@@ -19,7 +19,7 @@ export default function Home() {
         <div id="hero">
           <div className="container">
             <h1>Каталог инвестиционных проектов</h1>
-            <h2>
+            <h2 className="pagestyle">
               Инвестируйте в действующие бизнесы или стартапы с доходностью от
               15% до 50% годовых*
             </h2>

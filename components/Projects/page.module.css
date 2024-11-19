@@ -17,13 +17,13 @@
 }
 
 .item .title {
-    font-size: 26px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .item .tag {
     font-weight: 500;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .item .description {
@@ -31,16 +31,14 @@
     grid-row: 2 / 2;
     align-content: flex-start;
     overflow: hidden;
-
-}
-
-.item .description p {
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: var(--color-text-muted);
-    font-size: 15px;
+    font-size: 18px;
+
 }
+
 
 .item .footer {
     grid-column: 2 / 4;
@@ -77,6 +75,9 @@
     justify-content: space-between;
     border: 1px solid var(--color-border-params);
     border-radius: 10px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 130%;
 }
 
 .item .params li {
@@ -89,18 +90,14 @@
     border-right: none;
 }
 
-.item .params .label {
-    font-weight: 400;
-    font-size: 16px;
-}
 
-.item .params .value {
-    font-weight: 500;
-    font-size: 17px;
-}
 
-.btn.item-present {
-    font-size: 19px
+
+
+@media screen and (max-width: 1620px) {
+    .item .title {
+        font-size: 28px;
+    }
 }
 
 
@@ -124,10 +121,6 @@
         flex-direction: column;
     }
 
-    .item .title {
-        font-size: 24px;
-    }
-
     .item .params li {
         border-right: 0px;
         padding: 5px 10px;
@@ -149,21 +142,10 @@
     .item .title {
         font-size: 20px;
     }
-
-    .item .params .label {
-        font-size: 14px;
-    }
-
-    .item .params .value {
-        font-size: 16px;
-    }
 }
 
 
 @media screen and (max-width: 850px) {
-    .item .footer .params {
-        flex-direction: column;
-    }
 
     .item .params .label {
         text-align: center;
@@ -187,11 +169,18 @@
         display: flex;
         flex-direction: column;
         height: 807px;
+    }
 
+    .item .title {
+        font-size: 24px;
     }
 
     .item .footer .params {
         flex-direction: row;
+    }
+
+    .item .description p {
+        font-size: 14px;
     }
 }
 
@@ -213,18 +202,14 @@
         text-align: center;
         padding: 15px 20px;
     }
-
-    .btn.item-present {
-        font-size: 15px;
-    }
 }
 
 @media screen and (max-width: 373px) {
-    .item .description p {
-        font-size: 14px;
-    }
-
     .item {
         height: 776px;
+    }
+
+    .item .params {
+        font-size: 18px;
     }
 }
