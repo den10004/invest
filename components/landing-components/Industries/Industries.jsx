@@ -3,6 +3,7 @@ import "../style.css";
 import { industriesArr } from "@/lib/industriesArr";
 import Image from "next/image";
 import { useState } from "react";
+import RequestModal from "@/components/Modals/RequestModal";
 
 export default function Industries() {
   const [showModal, setShowModal] = useState(false);
@@ -37,7 +38,7 @@ export default function Industries() {
           Найти инвесторов
         </button>
         {showModal && (
-          <Request setShowModal={setShowModal} showModal={showModal} />
+          <RequestModal setShowModal={setShowModal} showModal={showModal} />
         )}
       </div>
     </section>
