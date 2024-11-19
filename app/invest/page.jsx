@@ -9,9 +9,9 @@ import Why from "@/components/landing-components/Why/Why";
 import Banner from "@/components/landing-components/Banner/Banner";
 
 export const metadata = {
-  title: "Каталог инвестиционных проектов",
-  description: "Каталог инвестиционных проектов",
-  keywords: "Каталог инвестиционных проектов",
+  title: "Размещение проектов в каталоге",
+  description: "Размещение проектов в каталоге",
+  keywords: "Размещение проектов в каталоге",
 };
 
 export default function Invest() {
