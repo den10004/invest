@@ -22,12 +22,15 @@ export default async function handler(req, res) {
       records.push({
         id: item.expand.project.id,
         title: item.expand.project.title,
+        content: item.expand.project.content,
+        group: item.expand.project.group,
+        invest: item.expand.project.invest,
+        profit: item.expand.project.profit,
         images: images,
       });
     }
 
     res.status(200).json({ message: "Ok", records: records });
-    console.log(records);
   } catch (error) {
     console.error("Ошибка аутентификации:", error);
     res.status(500).json({ message: "Ошибка сервера" });
