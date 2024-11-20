@@ -5,6 +5,7 @@ import { useState } from "react";
 import PresentationModal from "@/components/Modals/PresentationModal";
 import phone from "@/public/phones.webp";
 import TheHeader from "@/components/TheHeader/TheHeader";
+import Image from "next/image";
 
 export default function InvestContent() {
   const [open, setOpen] = useState(false);
@@ -30,7 +31,13 @@ export default function InvestContent() {
             <i className="i-download-pdf"></i> Получить презентацию
           </button>
 
-          <img src={phone.src} className="main-img" alt="" />
+          <Image
+            src={phone.src}
+            className="main-img"
+            alt="телефон"
+            width={515}
+            height={750}
+          />
         </div>
 
         <div className="separation"></div>

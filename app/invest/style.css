@@ -1,72 +1,9 @@
-/*
-
-.invests {
-    background: url(../../public/bg.webp);
-    background-position: 50% 0%;
-    background-repeat: no-repeat;
-    height: 800px;
-}
-
-
-.invests>div>h1 {
-    margin: 0 !important;
-    text-align: left !important;
-    font-weight: bold !important;
-
-}
-
-.invests>div>h1 {
-    padding: 150px 0 70px 0;
-}
-
-.invest-btn {
-    width: 360px;
-    text-align: center;
-}
-
-@media screen and (max-width: 1024px) {
-    .invests>div>h1 {
-        padding: 100px 0 50px 0;
-    }
-
-    .invests {
-        background-position: 0 -193px;
-        height: 600px;
-    }
-
-}
-
-
-@media screen and (max-width: 768px) {
-    .invests>div>h1 {
-        padding: 50px 0 30px 0;
-    }
-
-    .invests {
-        background-position: -53px -400px;
-        height: 400px;
-    }
-
-}
-
-
-
-@media screen and (max-width: 425px) {
-    .invest-btn {
-        width: 100%;
-    }
-
-    .invests {
-        background-position: -194px -549px;
-        height: 250px;
-    }
-}*/
-
-
 img.main-img {
     position: absolute;
     right: 141px;
     top: -100px;
+    width: 515px;
+    height: auto;
 }
 
 .placing__headline {
@@ -202,7 +139,6 @@ img.main-img {
 
 @media (max-width: 1620px) {
     img.main-img {
-        position: absolute;
         right: 24px;
         top: 48px;
         width: 424px;
@@ -248,7 +184,6 @@ img.main-img {
 
 @media (max-width: 1170px) {
     img.main-img {
-        position: absolute;
         right: 24px;
         top: 10px;
         width: 244px;
