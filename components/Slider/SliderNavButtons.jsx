@@ -2,6 +2,7 @@ import React from "react";
 import { useSwiper } from "swiper/react";
 import check from "./../../public/check.png";
 import "./style.css";
+import Image from "next/image";
 
 export const SliderNavButtons = () => {
   const swiper = useSwiper();
@@ -9,10 +10,24 @@ export const SliderNavButtons = () => {
   return (
     <div className="btn-wrapper">
       <button onClick={() => swiper.slidePrev()} className="btnSlider">
-        <img src={check.src} alt="button-prev" className="arrow" />
+        {/*<img src={check.src} alt="button-prev" className="arrow" />*/}
+        <Image
+          src={check.src}
+          alt="button-prev"
+          className="arrow"
+          width={10}
+          height={10}
+        />
       </button>
       <button onClick={() => swiper.slideNext()} className="btnSlider">
-        <img src={check.src} alt="button-next" className="arrow rotate" />
+        {/*<img src={check.src} alt="button-next" className="arrow rotate" />*/}
+        <Image
+          src={check.src}
+          alt="button-next"
+          className="arrow rotate"
+          width={10}
+          height={10}
+        />
       </button>
     </div>
   );

@@ -97,6 +97,10 @@
     position: relative;
 }
 
+.btnSlider>img {
+    width: 25%;
+    height: auto;
+}
 
 .rotate {
     transform: rotate(180deg)
@@ -110,10 +114,6 @@
 
     .btn-wrapper {
         top: calc(50% - 19px);
-    }
-
-    .btnSlider>img {
-        width: 25%;
     }
 }
 
