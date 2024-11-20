@@ -10,7 +10,6 @@ export const SliderNavButtons = () => {
   return (
     <div className="btn-wrapper">
       <button onClick={() => swiper.slidePrev()} className="btnSlider">
-        {/*<img src={check.src} alt="button-prev" className="arrow" />*/}
         <Image
           src={check.src}
           alt="button-prev"
@@ -20,7 +19,6 @@ export const SliderNavButtons = () => {
         />
       </button>
       <button onClick={() => swiper.slideNext()} className="btnSlider">
-        {/*<img src={check.src} alt="button-next" className="arrow rotate" />*/}
         <Image
           src={check.src}
           alt="button-next"
