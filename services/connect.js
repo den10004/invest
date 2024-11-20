@@ -1,15 +1,16 @@
 import { getPb } from "@/lib/pb";
 
 export async function ProjectRender() {
-  const pb = await getPb();
-
+  const records = null;
   try {
-    const data = await pb.collection("catalogue").getList(0, 100, {
-      expand: "project",
-    });
+    const pb = await getPb();
+    const api = await fetch("/api/records");
+    const data = await api.json();
+    const records = await data.records;
+
     return {
       pb,
-      data,
+      records,
     };
   } catch (error) {
     return { error: "Ошибка загрузки карточек" };

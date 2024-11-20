@@ -25,11 +25,7 @@ export default function Card({ p, pbArr }) {
             </div>
             <div className={styles.slider}>
               <div className={styles.slider__wrap}>
-                <Slider
-                  images={p.images.map((i) =>
-                    pbArr.files.getUrl(p, i, { thumb: "300x180" })
-                  )}
-                />
+                <Slider images={p.images} />
               </div>
             </div>
             <div
