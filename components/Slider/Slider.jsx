@@ -28,8 +28,8 @@ export default function Slider(images) {
     >
       {images.images.map((url) => (
         <SwiperSlide key={url}>
-          {/* <img src={url} alt="слайдер" loading="lazy" />*/}
-          <Image src={url} alt="слайдер" width={100} height={350} />
+          <img src={url} alt="слайдер" loading="lazy" />
+          {/*        <Image src={url} alt="слайдер" width={100} height={350} />*/}
         </SwiperSlide>
       ))}
 
