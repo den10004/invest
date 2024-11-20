@@ -5,6 +5,7 @@ dotenv.config();
 
 const nextConfig = {
   images: {
+    unoptimized: true,
     domains: ["invest.platformatest.ru"],
   },
   env: {
