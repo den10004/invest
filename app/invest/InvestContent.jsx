@@ -2,13 +2,13 @@
 import "./style.css";
 import { useState } from "react";
 
-import PresentationModal from "@/components/Modals/PresentationModal";
 import phone from "@/public/phones.webp";
 import TheHeader from "@/components/TheHeader/TheHeader";
 import Image from "next/image";
+import RequestModal from "@/components/Modals/RequestModal";
 
 export default function InvestContent() {
-  const [open, setOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -26,7 +26,7 @@ export default function InvestContent() {
           </p>
           <button
             className="btn btn-yellow big-btn btn-pdf-new openTafif"
-            onClick={() => setOpen(true)}
+            onClick={() => setShowModal(true)}
           >
             <i className="i-download-pdf"></i> Получить презентацию
           </button>
@@ -42,7 +42,9 @@ export default function InvestContent() {
 
         <div className="separation"></div>
       </section>
-      {open && <PresentationModal setOpen={setOpen} type={"presentation"} />}
+      {showModal && (
+        <RequestModal setShowModal={setShowModal} showModal={showModal} />
+      )}
     </>
   );
 }

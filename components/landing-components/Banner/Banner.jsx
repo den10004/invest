@@ -1,11 +1,11 @@
 "use client";
 import "./style.css";
 import "../style.css";
-import PresentationModal from "@/components/Modals/PresentationModal";
 import { useState } from "react";
+import RequestModal from "@/components/Modals/RequestModal";
 
 export default function Banner() {
-  const [open, setOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   return (
     <section className="banner" style={{ color: "white" }}>
       <div className="banner__block">
@@ -17,13 +17,15 @@ export default function Banner() {
 
           <button
             className="btn btn-yellow invest-btn openTafif"
-            onClick={() => setOpen(true)}
+            onClick={() => setShowModal(true)}
           >
             Связаться с нами
           </button>
         </div>
       </div>
-      {open && <PresentationModal setOpen={setOpen} type={"placement"} />}
+      {showModal && (
+        <RequestModal setShowModal={setShowModal} showModal={showModal} />
+      )}
     </section>
   );
 }
