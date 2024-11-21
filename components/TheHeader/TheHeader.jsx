@@ -2,15 +2,12 @@
 
 import Link from "next/link";
 import "./style.css";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import RequestModal from "../Modals/RequestModal";
+import { usePathname } from "next/navigation";
 
 export default function TheHeader() {
-  const navItems = [
-    { label: "Каталог инвестпроектов", href: "/" },
-    { label: "Размещение проектов в каталоге", href: "/invest" },
-    { label: "Контакты", href: "/contacts" },
-  ];
+  const pathname = usePathname();
   const nav = useRef();
   const navbtn = useRef();
   const [showModal, setShowModal] = useState(false);
@@ -42,9 +39,21 @@ export default function TheHeader() {
           <span className="close-header" ref={navbtn} onClick={closeMenuOpen}>
             ×
           </span>
-          <Link href="/">Каталог инвестпроектов</Link>
-          <Link href="/invest">Размещение проектов в каталоге</Link>
-          <Link href="/contacts">Контакты</Link>
+          <Link className={pathname == "/" ? "activePage" : ""} href="/">
+            Каталог инвестпроектов
+          </Link>
+          <Link
+            className={pathname == "/invest" ? "activePage" : ""}
+            href="/invest"
+          >
+            Размещение проектов в каталоге
+          </Link>
+          <Link
+            className={pathname == "/contacts" ? "activePage" : ""}
+            href="/contacts"
+          >
+            Контакты
+          </Link>
         </nav>
 
         <button
