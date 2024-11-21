@@ -41,19 +41,15 @@ export default function PresentationModal({ setOpen, type, projectId }) {
   };
 
   const checkPhoneInput = (event) => {
-    if (placeholderText === "Введите номер телефона") {
-      const { name, value } = event.target;
-      Telmask(event);
-      ToggleBtn(value);
-    }
+    const { value } = event.target;
+    Telmask(event);
+    ToggleBtn(value);
   };
 
   const checkPhonePaste = (event) => {
-    if (placeholderText === "Введите номер телефона") {
-      const { name, value } = event.target;
-      pasteCallback(event);
-      ToggleBtn(value);
-    }
+    const { value } = event.target;
+    pasteCallback(event);
+    ToggleBtn(value);
   };
 
   useEffect(() => {
