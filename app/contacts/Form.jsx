@@ -84,12 +84,26 @@ export default function Form() {
     formData.append("ip", ip);
     const pb = await getPb();
 
-    try {
-      const data = await pb.collection("orders").create(formData);
+    let formObject = {};
+    formData.forEach(function (value, key) {
+      formObject[key] = value;
+    });
+    const json = JSON.stringify(formObject);
+
+    const result = await fetch("/api/sendform", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: json,
+    });
+
+    if (result.status) {
       router.push("/thanks");
-    } catch (error) {
-      console.error(error.message);
-      alert("Ошибка при отправки формы");
+    }
+    if (result.status != 200) {
+      alert("Ошибка отправки формы");
     }
   }
 

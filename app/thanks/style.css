@@ -6,6 +6,10 @@
     padding-bottom: 36px;
 }
 
+.wrap-thanks {
+    padding-bottom: 30px;
+}
+
 .timeline {
     white-space: pre-line;
     color: #868c91;
@@ -63,6 +67,10 @@
         line-height: 154%;
         margin: 14px 0 14px 0;
     }
+
+    .wrap-thanks {
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width: 425px) {
@@ -75,9 +83,10 @@
         box-sizing: border-box;
         width: 100%;
         text-align: center;
+        padding: 10px;
     }
+}
 
-    .page-title {
-        font-size: 28px;
-    }
+.page-title {
+    font-size: 28px;
 }

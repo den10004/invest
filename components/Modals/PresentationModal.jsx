@@ -42,7 +42,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
 
   const checkPhoneInput = (event) => {
     const { value } = event.target;
-    //Telmask(event);
+    Telmask(event);
     ToggleBtn(value);
   };
 
@@ -128,7 +128,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
       },
       body: json,
     });
-    console.log(result);
+
     if (result.status) {
       setOpen(false);
     }
