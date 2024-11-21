@@ -54,9 +54,17 @@
 
 }
 
+@media screen and (max-width: 580px) {
+    .banner {
+        background: url(../../../public/communication768.webp);
+        background-position: 0% 0%;
+        height: 400px;
+    }
+}
+
 @media screen and (max-width: 425px) {
     .banner {
-        height: 250px;
+        height: 300px;
     }
 
     .banner__block {
@@ -64,7 +72,9 @@
     }
 
     .banner__block>div>button {
-        margin-top: 40px;
+        margin-top: 30px;
+        font-size: 14px;
+        padding: 5px 10px;
     }
 
 }

@@ -36,6 +36,7 @@
     line-height: 1.6;
     color: var(--color-text-muted);
     font-size: 18px;
+    font-weight: 500;
 
 }
 
@@ -82,6 +83,7 @@
     font-weight: 500;
     font-size: 19px;
     line-height: 130%;
+    white-space: nowrap;
 }
 
 .item .params li {

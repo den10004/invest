@@ -1,1 +1,4 @@
-{"/api/ip":"pages/api/ip.js","/api/records":"pages/api/records.js","/_app":"pages/_app.js","/_error":"pages/_error.js","/_document":"pages/_document.js","/404":"pages/404.html"}
+{
+  "/api/records": "pages/api/records.js",
+  "/api/ip": "pages/api/ip.js"
+}
