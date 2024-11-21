@@ -12,6 +12,12 @@ export default function TheHeader() {
   const navbtn = useRef();
   const [showModal, setShowModal] = useState(false);
 
+  const links = [
+    { href: "/", title: "Каталог инвестпроектов" },
+    { href: "/invest", title: "Размещение проектов в каталоге" },
+    { href: "/contacts", title: "Контакты" },
+  ];
+
   const showMenuOpen = () => {
     nav.current.style.display = "flex";
     navbtn.current.style.display = "block";
@@ -39,21 +45,15 @@ export default function TheHeader() {
           <span className="close-header" ref={navbtn} onClick={closeMenuOpen}>
             ×
           </span>
-          <Link className={pathname == "/" ? "activePage" : ""} href="/">
-            Каталог инвестпроектов
-          </Link>
-          <Link
-            className={pathname == "/invest" ? "activePage" : ""}
-            href="/invest"
-          >
-            Размещение проектов в каталоге
-          </Link>
-          <Link
-            className={pathname == "/contacts" ? "activePage" : ""}
-            href="/contacts"
-          >
-            Контакты
-          </Link>
+          {links.map((e) => (
+            <Link
+              className={pathname == `${e.href}` ? "activePage" : ""}
+              href={e.href}
+              key={e.href}
+            >
+              {e.title}
+            </Link>
+          ))}
         </nav>
 
         <button

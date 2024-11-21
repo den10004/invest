@@ -4,8 +4,7 @@ import { useSearchParams } from "next/navigation";
 import "./index.css";
 import Link from "next/link";
 import { Telmask, pasteCallback } from "@/lib/telmask";
-import { DetectOS, GetBrowser } from "@/services/getUserDevices";
-import { GetUserIp } from "@/services/GetUserIp";
+import { DetectOS, GetBrowser, GetUserIp } from "@/services/getUserDevices";
 
 export default function PresentationModal({ setOpen, type, projectId }) {
   const [active, setActive] = useState("phone");

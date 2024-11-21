@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from "react";
-import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
 import "./index.css";
 import Link from "next/link";
 import { Telmask, pasteCallback } from "@/lib/telmask";
-import { DetectOS, GetBrowser } from "@/services/getUserDevices";
-import { GetUserIp } from "@/services/GetUserIp";
+import { DetectOS, GetBrowser, GetUserIp } from "@/services/getUserDevices";
 
 export default function RequestModal({ setShowModal }) {
   const searchParams = useSearchParams();
   const [ip, setIp] = useState();
   const [utmParams, setUtmParams] = useState(null);
+  const [response, setResponse] = useState({});
   const phoneInput = useRef(null);
   const [buttonEnabled, setbuttonEnabled] = useState(false);
+
+  console.log(response);
 
   const ToggleBtn = (value) => {
     if (value.length === 13) {
@@ -89,16 +90,22 @@ export default function RequestModal({ setShowModal }) {
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
     formData.append("ip", ip);
-    const pb = await getPb();
-    try {
-      const data = await pb.collection("orders").create(formData);
-      setShowModal(false);
-      alert("Форма отправлена");
-    } catch (error) {
-      console.error(error.message);
-      setShowModal(false);
-      alert("Ошибка при отправки формы");
-    }
+
+    let formObject = {};
+    formData.forEach(function (value, key) {
+      formObject[key] = value;
+    });
+    const json = JSON.stringify(formObject);
+
+    const result = await fetch("/api/sendform", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: json,
+    });
+    setResponse(result);
   }
 
   return (

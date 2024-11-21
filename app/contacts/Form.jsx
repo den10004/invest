@@ -2,8 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { DetectOS, GetBrowser } from "@/services/getUserDevices";
-import { GetUserIp } from "@/services/GetUserIp";
+import { DetectOS, GetBrowser, GetUserIp } from "@/services/getUserDevices";
 import { Telmask, pasteCallback } from "@/lib/telmask";
 import { getPb } from "@/lib/pb";
 import Link from "next/link";

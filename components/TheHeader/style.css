@@ -41,6 +41,10 @@ header .btn-yellow {
     padding: 13.5px 28.5px;
 }
 
+.activePage {
+    border-bottom: 1px solid var(--color-text-header);
+}
+
 
 @media (max-width: 1620px) {
     header .btn-yellow {
@@ -57,7 +61,7 @@ header .btn-yellow {
 }
 
 @media (min-width: 901px) {
-    .flex header-nav {
+    .flex .header-nav {
         display: block;
     }
 }
@@ -106,6 +110,11 @@ header .btn-yellow {
         padding: 10px;
         font-weight: 600;
     }
+
+    .activePage {
+        border-bottom: 1px solid var(--color-text-item);
+    }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -159,8 +168,4 @@ header .btn-yellow {
     a.logo {
         font-size: 16px;
     }
-}
-
-.activePage {
-    border-bottom: 1px solid var(--color-text-header);
 }

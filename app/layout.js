@@ -7,7 +7,8 @@ export default function RootLayout({ children }) {
     <html lang="ru">
       <Head>
         <title>Каталог инвестпроектов</title>
-        <meta name="description" content="Размещение проектов  каталоге"></meta>
+        <meta name="description" content="Размещение проектов каталоге"></meta>
+        <meta name="keywords" content="Каталог инвестиционных проектов"></meta>
       </Head>
 
       <body>

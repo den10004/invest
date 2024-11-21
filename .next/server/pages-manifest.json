@@ -1,4 +1,4 @@
 {
   "/api/ip": "pages/api/ip.js",
-  "/api/records": "pages/api/records.js"
+  "/api/sendform": "pages/api/sendform.js"
 }

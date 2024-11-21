@@ -44,3 +44,8 @@ export const DetectOS = () => {
   }
   return os;
 };
+
+export async function GetUserIp() {
+  const ip = fetch("/api/ip");
+  return ip;
+}
