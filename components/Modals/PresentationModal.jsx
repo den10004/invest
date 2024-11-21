@@ -42,7 +42,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
 
   const checkPhoneInput = (event) => {
     const { value } = event.target;
-    Telmask(event);
+    //Telmask(event);
     ToggleBtn(value);
   };
 
@@ -51,6 +51,11 @@ export default function PresentationModal({ setOpen, type, projectId }) {
     pasteCallback(event);
     ToggleBtn(value);
   };
+
+  function checkFocus() {
+    let phoneEl = phoneInput.current;
+    Telmask({ target: phoneEl });
+  }
 
   useEffect(() => {
     GetUserIp()
@@ -62,7 +67,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
 
   useEffect(() => {
     let phoneEl = phoneInput.current;
-    Telmask({ target: phoneEl });
+    // Telmask({ target: phoneEl });
     function HandleEscapeKey(event) {
       if (event.code === "Escape") {
         setOpen(false);
@@ -278,6 +283,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
               data-phone-pattern
               onChange={checkPhoneInput}
               onPaste={checkPhonePaste}
+              onFocus={checkFocus}
             />
           )}
           {active === "email" && (

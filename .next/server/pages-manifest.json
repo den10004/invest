@@ -1,7 +1,4 @@
 {
   "/api/ip": "pages/api/ip.js",
-  "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/_error": "pages/_error.js",
   "/api/records": "pages/api/records.js"
 }

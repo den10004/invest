@@ -21,16 +21,21 @@ export default function RequestModal({ setShowModal }) {
   };
 
   const checkPhoneInput = (event) => {
-    const { name, value } = event.target;
+    const { value } = event.target;
     Telmask(event);
     ToggleBtn(value);
   };
 
   const checkPhonePaste = (event) => {
-    const { name, value } = event.target;
+    const { value } = event.target;
     pasteCallback(event);
     ToggleBtn(value);
   };
+
+  function checkFocus() {
+    let phoneEl = phoneInput.current;
+    Telmask({ target: phoneEl });
+  }
 
   useEffect(() => {
     GetUserIp()
@@ -41,8 +46,6 @@ export default function RequestModal({ setShowModal }) {
   }, []);
 
   useEffect(() => {
-    let phoneEl = phoneInput.current;
-    Telmask({ target: phoneEl });
     function handleEscapeKey(event) {
       if (event.code === "Escape") {
         setShowModal(false);
@@ -149,6 +152,7 @@ export default function RequestModal({ setShowModal }) {
                 placeholder="Введите номер телефона"
                 onChange={checkPhoneInput}
                 onPaste={checkPhonePaste}
+                onFocus={checkFocus}
               />
             </div>
             <button
