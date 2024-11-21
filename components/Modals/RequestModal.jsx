@@ -13,8 +13,6 @@ export default function RequestModal({ setShowModal }) {
   const phoneInput = useRef(null);
   const [buttonEnabled, setbuttonEnabled] = useState(false);
 
-  console.log(response);
-
   const ToggleBtn = (value) => {
     if (value.length === 13) {
       setbuttonEnabled(true);
@@ -105,7 +103,15 @@ export default function RequestModal({ setShowModal }) {
       },
       body: json,
     });
-    setResponse(result);
+    if (result.status) {
+      setShowModal(false);
+    }
+    if (result.status === 200) {
+      alert("Форма отправлена");
+    }
+    if (result.status != 200) {
+      alert("Ошибка отправки формы");
+    }
   }
 
   return (
