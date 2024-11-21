@@ -16,7 +16,7 @@ export default function Form() {
   const [buttonEnabled, setbuttonEnabled] = useState(false);
 
   const ToggleBtn = (value) => {
-    if (value.length === 13) {
+    if (value.length === 12) {
       setbuttonEnabled(true);
     } else {
       setbuttonEnabled(false);
@@ -24,13 +24,13 @@ export default function Form() {
   };
 
   const checkPhoneInput = (event) => {
-    const { name, value } = event.target;
-    Telmask(event);
+    let { value } = event.target;
+    value = Telmask(event);
     ToggleBtn(value);
   };
 
   const checkPhonePaste = (event) => {
-    const { name, value } = event.target;
+    const { value } = event.target;
     pasteCallback(event);
     ToggleBtn(value);
   };

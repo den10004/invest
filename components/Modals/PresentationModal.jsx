@@ -33,7 +33,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
   }, [active]);
 
   const ToggleBtn = (value) => {
-    if (value.length === 13) {
+    if (value.length === 12) {
       setbuttonEnabled(true);
     } else {
       setbuttonEnabled(false);
@@ -41,8 +41,8 @@ export default function PresentationModal({ setOpen, type, projectId }) {
   };
 
   const checkPhoneInput = (event) => {
-    const { value } = event.target;
-    Telmask(event);
+    let { value } = event.target;
+    value = Telmask(event);
     ToggleBtn(value);
   };
 
