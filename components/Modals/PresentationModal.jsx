@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { getPb } from "@/lib/pb";
 import { useSearchParams } from "next/navigation";
-import "./index.css";
-import Link from "next/link";
 import { Telmask, pasteCallback } from "@/lib/telmask";
 import { DetectOS, GetBrowser, GetUserIp } from "@/services/getUserDevices";
+import Link from "next/link";
+import "./index.css";
 
 export default function PresentationModal({ setOpen, type, projectId }) {
   const [active, setActive] = useState("phone");
@@ -114,15 +113,29 @@ export default function PresentationModal({ setOpen, type, projectId }) {
     formData.append("browser", GetBrowser());
     formData.append("ip", ip);
 
-    const pb = await getPb();
-    try {
-      const data = await pb.collection("orders").create(formData);
+    let formObject = {};
+    formData.forEach(function (value, key) {
+      formObject[key] = value;
+    });
+    const json = JSON.stringify(formObject);
+
+    const result = await fetch("/api/sendform", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: json,
+    });
+    console.log(result);
+    if (result.status) {
       setOpen(false);
+    }
+    if (result.status === 200) {
       alert("Форма отправлена");
-    } catch (error) {
-      console.error(error.message);
-      setOpen(false);
-      alert("Ошибка при отправки формы");
+    }
+    if (result.status != 200) {
+      alert("Ошибка отправки формы");
     }
   }
 

@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import "./index.css";
-import Link from "next/link";
 import { Telmask, pasteCallback } from "@/lib/telmask";
 import { DetectOS, GetBrowser, GetUserIp } from "@/services/getUserDevices";
+import Link from "next/link";
+import "./index.css";
 
 export default function RequestModal({ setShowModal }) {
   const searchParams = useSearchParams();
   const [ip, setIp] = useState();
   const [utmParams, setUtmParams] = useState(null);
-  const [response, setResponse] = useState({});
   const phoneInput = useRef(null);
   const [buttonEnabled, setbuttonEnabled] = useState(false);
 
