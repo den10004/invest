@@ -159,7 +159,7 @@ export default function Form() {
       </button>
       <div className="polit-descr">
         Нажимая кнопку Отправить сообщение, я подтверждаю, что ознакомлен и
-        согласен с условиями&nbsp;
+        согласен с условиями
         <Link href="/policy" target="_blank" className="polit">
           политики обработки персональных данных
         </Link>
