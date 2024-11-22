@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { DetectOS, GetBrowser, GetUserIp } from "@/services/getUserDevices";
 import { Telmask, pasteCallback } from "@/lib/telmask";
-import { getPb } from "@/lib/pb";
 import Link from "next/link";
 
 export default function Form() {
@@ -35,10 +34,10 @@ export default function Form() {
     ToggleBtn(value);
   };
 
-  useEffect(() => {
+  function checkFocus() {
     let phoneEl = phoneInput.current;
     Telmask({ target: phoneEl });
-  }, []);
+  }
 
   useEffect(() => {
     GetUserIp()
@@ -82,7 +81,6 @@ export default function Form() {
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
     formData.append("ip", ip);
-    const pb = await getPb();
 
     let formObject = {};
     formData.forEach(function (value, key) {
@@ -142,6 +140,7 @@ export default function Form() {
           ref={phoneInput}
           onChange={checkPhoneInput}
           onPaste={checkPhonePaste}
+          onFocus={checkFocus}
           required
         />
         <input type="email" name="email" placeholder="Ваш e-mail" required />
@@ -160,7 +159,7 @@ export default function Form() {
       </button>
       <div className="polit-descr">
         Нажимая кнопку Отправить сообщение, я подтверждаю, что ознакомлен и
-        согласен с условиями
+        согласен с условиями&nbsp;
         <Link href="/policy" target="_blank" className="polit">
           политики обработки персональных данных
         </Link>

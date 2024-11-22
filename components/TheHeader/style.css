@@ -42,7 +42,7 @@ header .btn-yellow {
 }
 
 .activePage {
-    border-bottom: 1px solid var(--color-text-header);
+    border-bottom: 2px solid var(--color-text-header);
 }
 
 

@@ -66,7 +66,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
   }, []);
 
   useEffect(() => {
-    let phoneEl = phoneInput.current;
+    //let phoneEl = phoneInput.current;
     // Telmask({ target: phoneEl });
     function HandleEscapeKey(event) {
       if (event.code === "Escape") {
