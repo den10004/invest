@@ -99,6 +99,8 @@ form.form-box .btn.submit {
 
 .contacts-btn {
     margin-left: 30px;
+    align-items: center;
+    display: flex;
 }
 
 .polit-descr a {
@@ -129,11 +131,6 @@ form.form-box.blue-box input {
     margin-bottom: 0;
 }
 
-/*
-form.form-box.blue-box .input-box {
-    width: 26%;
-}
-*/
 form.form-box.blue-box .input-box input {
     width: 100%;
 }
@@ -175,6 +172,10 @@ form.form-box.flex-wrap .input-box input {
 
     .polit-descr {
         margin-left: 0;
+    }
+
+    .contacts-btn {
+        display: block;
     }
 }
 
