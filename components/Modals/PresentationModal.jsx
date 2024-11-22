@@ -300,7 +300,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
           </button>
 
           <div className="polit-descr">
-            Нажимая кнопку &nbsp; &quot;'Получить презентацию&quot;', я
+            Нажимая кнопку &nbsp; &quot;`Получить презентацию&quot;`, я
             подтверждаю, что ознакомлен и согласен с условиями &nbsp;
             <Link href="/policy" target="_blank" className="polit">
               политики обработки персональных данных
