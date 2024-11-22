@@ -94,10 +94,12 @@ form.form-box .btn.submit {
     -ms-flex-positive: 1;
     flex-grow: 1;
     font-size: 14px;
-    margin-left: 31px;
     line-height: 160%;
 }
 
+.contacts-btn {
+    margin-left: 30px;
+}
 
 .polit-descr a {
     color: #56a7fb;

@@ -157,7 +157,7 @@ export default function Form() {
       >
         Отправить сообщение
       </button>
-      <div className="polit-descr">
+      <div className="polit-descr contacts-btn">
         Нажимая кнопку &quot;'Отправить сообщение&quot;', я подтверждаю, что
         ознакомлен и согласен с условиями &nbsp;
         <Link href="/policy" target="_blank" className="polit">
