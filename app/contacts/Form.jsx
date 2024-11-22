@@ -15,7 +15,7 @@ export default function Form() {
   const [buttonEnabled, setbuttonEnabled] = useState(false);
 
   const ToggleBtn = (value) => {
-    if (value.length === 12) {
+    if (value.length === 16) {
       setbuttonEnabled(true);
     } else {
       setbuttonEnabled(false);
@@ -81,6 +81,11 @@ export default function Form() {
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
     formData.append("ip", ip);
+    formData.set("phone", formData.get("phone").replace(/[- )(]/g, ""));
+
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ": " + pair[1]);
+    }
 
     let formObject = {};
     formData.forEach(function (value, key) {
@@ -97,7 +102,7 @@ export default function Form() {
       body: json,
     });
 
-    if (result.status) {
+    if (result.status == 200) {
       router.push("/thanks");
     }
     if (result.status != 200) {

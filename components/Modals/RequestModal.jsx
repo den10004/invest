@@ -13,7 +13,7 @@ export default function RequestModal({ setShowModal }) {
   const [buttonEnabled, setbuttonEnabled] = useState(false);
 
   const ToggleBtn = (value) => {
-    if (value.length === 12) {
+    if (value.length === 16) {
       setbuttonEnabled(true);
     } else {
       setbuttonEnabled(false);
@@ -90,6 +90,7 @@ export default function RequestModal({ setShowModal }) {
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
     formData.append("ip", ip);
+    formData.set("phone", formData.get("phone").replace(/[- )(]/g, ""));
 
     let formObject = {};
     formData.forEach(function (value, key) {
