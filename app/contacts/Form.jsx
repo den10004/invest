@@ -152,14 +152,14 @@ export default function Form() {
       ></textarea>
 
       <button
-        className="btn btn-yellow btn-yellow big-btn"
+        className="btn-yellow btn btn-form big-btn"
         disabled={!buttonEnabled}
       >
         Отправить сообщение
       </button>
       <div className="polit-descr">
-        Нажимая кнопку Отправить сообщение, я подтверждаю, что ознакомлен и
-        согласен с условиями
+        Нажимая кнопку &quot;'Отправить сообщение&quot;', я подтверждаю, что
+        ознакомлен и согласен с условиями &nbsp;
         <Link href="/policy" target="_blank" className="polit">
           политики обработки персональных данных
         </Link>

@@ -162,8 +162,8 @@ export default function RequestModal({ setShowModal }) {
               Разместить проект
             </button>
             <div className="polit-descr">
-              Нажимая кнопку Разместить проект, я подтверждаю, что ознакомлен и
-              согласен с условиями
+              Нажимая кнопку &nbsp; &quot;'Разместить проект&quot;', я
+              подтверждаю, что ознакомлен и согласен с условиями &nbsp;
               <Link href="/policy" target="_blank" className="polit">
                 политики обработки персональных данных
               </Link>

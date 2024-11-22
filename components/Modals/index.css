@@ -69,6 +69,7 @@ form.custom-form.modal-form {
 }
 
 
+
 .input-box {
     width: 100%;
 }
@@ -137,24 +138,12 @@ form.custom-form select {
 
 .modal-form .polit-descr {
     white-space: normal;
-    font-size: 10px;
-    margin: 0;
+    font-size: 14px;
     width: 90%;
     padding: 0;
     line-height: 144%;
 }
 
-.polit-descr {
-    color: black;
-    white-space: pre-line;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    font-size: 12px;
-    margin-left: 31px;
-    line-height: 160%;
-    padding-top: 10px;
-}
 
 
 .overlay {
@@ -169,8 +158,6 @@ form.custom-form select {
     top: 0;
     left: 0;
     cursor: pointer;
-    /*
-    display: none;*/
 }
 
 .polit-descr a {
@@ -219,22 +206,17 @@ form fieldset.options .field input[type=radio] {
     display: none;
 }
 
-
-
-
 @media (max-width: 1620px) {
     .btn {
         padding: 13.5px 23.5px;
     }
-
 }
 
 
 @media (max-width: 767px) {
     .modal-form .polit-descr {
         white-space: normal;
-        font-size: 9.7px;
-        margin: 0;
+        font-size: 12px;
         width: 100%;
         padding: 0;
         line-height: 144%;
@@ -283,6 +265,8 @@ form fieldset.options .field input[type=radio] {
     form fieldset.options .field input+label {
         font-size: 8px;
     }
+
+
 }
 
 

@@ -292,7 +292,7 @@ export default function PresentationModal({ setOpen, type, projectId }) {
 
           <button
             ref={sendButton}
-            className="btn-yellow btn-yellow big-btn"
+            className="btn submit btn-yellow big-btn"
             style={{ width: "100%", textAlign: "center" }}
             disabled={!buttonEnabled}
           >
@@ -300,8 +300,8 @@ export default function PresentationModal({ setOpen, type, projectId }) {
           </button>
 
           <div className="polit-descr">
-            Нажимая кнопку Получить презентацию, я подтверждаю, что ознакомлен и
-            согласен с условиями
+            Нажимая кнопку &nbsp; &quot;'Получить презентацию&quot;', я
+            подтверждаю, что ознакомлен и согласен с условиями &nbsp;
             <Link href="/policy" target="_blank" className="polit">
               политики обработки персональных данных
             </Link>

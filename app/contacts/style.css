@@ -96,8 +96,8 @@ form.form-box .btn.submit {
     font-size: 14px;
     margin-left: 31px;
     line-height: 160%;
-    padding-top: 10px;
 }
+
 
 .polit-descr a {
     color: #56a7fb;
@@ -148,14 +148,6 @@ form.form-box.flex-wrap .input-box input {
     gap: 10px;
 }
 
-@media (max-width: 768px) {
-    .input-wr {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
-}
-
-
 
 @media (max-width: 1620px) {
     form.form-box.flex-wrap {
@@ -173,6 +165,14 @@ form.form-box.flex-wrap .input-box input {
     a.email-href {
         color: #56a7fb;
         font-size: 25px;
+    }
+
+    .btn-form {
+        margin-bottom: 10px;
+    }
+
+    .polit-descr {
+        margin-left: 0;
     }
 }
 
@@ -215,9 +215,6 @@ form.form-box.flex-wrap .input-box input {
     }
 }
 
-
-
-
 @media (max-width: 767px) {
     .page-title {
         margin: 0px 0 18px;
@@ -226,6 +223,12 @@ form.form-box.flex-wrap .input-box input {
         font-size: 24px;
         white-space: normal;
     }
+
+    .input-wr {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
 
     form.form-box.flex-wrap .title {
         color: black;
@@ -258,7 +261,7 @@ form.form-box.flex-wrap .input-box input {
         font-size: 23px;
     }
 
-    form.form-box.flex-wrap .btn.submit {
+    form.form-box.flex-wrap .btn .submit {
         margin: 0px 0;
         font-size: 16px;
         padding: 21px 45px;
@@ -279,8 +282,16 @@ form.form-box.flex-wrap .input-box input {
         padding-top: 4px;
         padding-bottom: 18px;
     }
+
 }
 
+@media (max-width: 425px) {
+
+    .btn-form {
+        width: 100% !important;
+        text-align: center;
+    }
+}
 
 @media (max-width: 365px) {
     a.big-phone {
