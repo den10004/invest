@@ -23,6 +23,7 @@ html {
   src: url('../font/Gilroy-Regular.woff') format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -30,6 +31,7 @@ html {
   src: url('../font/Gilroy-Medium.woff') format("woff2");
   font-weight: 500;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -37,6 +39,7 @@ html {
   src: url('../font/Gilroy-SemiBold.woff') format("woff2");
   font-weight: 600;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -44,6 +47,7 @@ html {
   src: url('../font/Gilroy-Bold.woff') format("woff2");
   font-weight: bold;
   font-style: normal;
+  font-display: fallback;
 }
 
 
