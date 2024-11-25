@@ -296,11 +296,6 @@ nav ul {
   background: linear-gradient(180deg, #ffc013, #f9e95b);
 }
 
-.btn-yellow:hover {
-  box-shadow: none;
-}
-
-
 @media (max-width: 767px) {
   .btn-yellow {
     font-size: 15px;
