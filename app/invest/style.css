@@ -5,7 +5,6 @@
 }
 
 .openTafif {
-  margin-bottom: 100px;
   padding: 20px 100px;
   font-size: 19px;
 }
@@ -208,6 +207,9 @@
 }
 
 @media (max-width: 767px) {
+  .openTafif {
+    margin-bottom: 30px;
+  }
   .bg-invest {
     background: none;
     height: auto;

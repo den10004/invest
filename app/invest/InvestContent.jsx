@@ -3,7 +3,6 @@ import "./style.css";
 import { useState } from "react";
 
 import TheHeader from "@/components/TheHeader/TheHeader";
-import Image from "next/image";
 import RequestModal from "@/components/Modals/RequestModal";
 
 export default function InvestContent() {
