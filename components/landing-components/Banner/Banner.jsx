@@ -16,7 +16,7 @@ export default function Banner() {
           </h1>
 
           <button
-            className="btn btn-yellow invest-btn openTafif"
+            className="btn btn-yellow openTafif"
             onClick={() => setShowModal(true)}
           >
             Связаться с нами

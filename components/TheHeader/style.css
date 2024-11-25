@@ -30,7 +30,7 @@
     display: -ms-flexbox;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .flex .header-nav>a {

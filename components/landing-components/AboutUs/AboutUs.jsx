@@ -2,8 +2,6 @@ import "./style.css";
 import "../style.css";
 import Image from "next/image";
 import graph from "../../../public/graph1.webp";
-import eye from "../../../public/eye.png";
-import mail from "../../../public/mail.png";
 
 export default function AboutUs() {
   return (
@@ -27,72 +25,54 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="aboutUs__graph">
-        <div className="point"></div>
-
-        <div className="aboutUs__count count1">
-          <div className="count__second">
-            <div>
-              <Image src={eye} alt="иконка" />
-              <p className="block-style">
-                <span>3 295 341 </span>
-                <br />
-                просмотр
-              </p>
+        <div className="numbers-box__graph">
+          <Image priority src={graph} alt="фон" className="" />
+          <div class="line">
+            <div class="point">
+              <div class="details">
+                <div class="views">
+                  3 295 341
+                  <br />
+                  <span>просмотр</span>
+                </div>
+                <div class="orders">
+                  7 720 <br />
+                  <span>заявок</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <Image src={mail} alt="иконка" />
-              <p className="block-style">
-                <span>7 720 </span>
-                <br />
-                заявок
-              </p>
+          </div>
+          <div class="line">
+            <div class="point">
+              <div class="details">
+                <div class="views">
+                  3 890 753
+                  <br />
+                  <span>просмотра</span>
+                </div>
+                <div class="orders">
+                  8 214 <br />
+                  <span>заявок</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="line">
+            <div class="point">
+              <div class="details">
+                <div class="views">
+                  3 456 026
+                  <br />
+                  <span>просмотров</span>
+                </div>
+                <div class="orders">
+                  10 122 <br />
+                  <span>заявки</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="aboutUs__count count2">
-          <div className="count__second">
-            <div>
-              <Image src={eye} alt="иконка" />
-              <p className="block-style">
-                <span>3 890 753 </span>
-                <br />
-                просмотра
-              </p>
-            </div>
-            <div>
-              <Image src={mail} alt="иконка" />
-              <p className="block-style">
-                <span>78 214 </span>
-                <br />
-                заявок
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="aboutUs__count count3">
-          <div className="count__second">
-            <div>
-              <Image src={eye} alt="иконка" />
-              <p className="block-style">
-                <span>3 456 026 </span>
-                <br />
-                просмотров
-              </p>
-            </div>
-            <div>
-              <Image src={mail} alt="иконка" />
-              <p className="block-style">
-                <span>10 122 </span>
-                <br />
-                заявки
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <Image priority src={graph} alt="фон" />
       </div>
     </section>
   );
