@@ -87,6 +87,11 @@ form.form-box .btn.submit {
     text-align: center;
 }
 
+.btn-form {
+    font-size: 19px;
+}
+
+
 .polit-descr {
     color: black;
     white-space: pre-line;
@@ -293,6 +298,10 @@ form.form-box.flex-wrap .input-box input {
     .btn-form {
         width: 100% !important;
         text-align: center;
+    }
+
+    .btn-form {
+        font-size: 16px;
     }
 }
 

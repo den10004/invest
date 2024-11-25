@@ -107,13 +107,18 @@
 }
 
 
-@media screen and (max-width: 1400px) {
-    .item .params {
-        font-size: 16px;
-    }
+@media screen and (max-width: 1430px) {
 
     .button>button {
         font-size: 16px !important;
+    }
+}
+
+
+
+@media screen and (max-width: 1400px) {
+    .item .params {
+        font-size: 16px;
     }
 }
 
