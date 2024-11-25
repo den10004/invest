@@ -2,7 +2,6 @@
 import "./style.css";
 import { useState } from "react";
 
-import phone from "@/public/phones.webp";
 import TheHeader from "@/components/TheHeader/TheHeader";
 import Image from "next/image";
 import RequestModal from "@/components/Modals/RequestModal";
@@ -12,7 +11,7 @@ export default function InvestContent() {
 
   return (
     <>
-      <section id="main" className="shine">
+      <section id="main" className="bg-invest">
         <TheHeader />
         <div className="wrap" style={{ position: "relative" }}>
           <h1 className="placing__headline">
@@ -30,17 +29,7 @@ export default function InvestContent() {
           >
             <i className="i-download-pdf"></i> Получить презентацию
           </button>
-
-          <Image
-            src={phone.src}
-            className="main-img"
-            alt="телефон"
-            width={515}
-            height={750}
-          />
         </div>
-
-        <div className="separation"></div>
       </section>
       {showModal && (
         <RequestModal setShowModal={setShowModal} showModal={showModal} />
