@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { DetectOS, GetBrowser, GetUserIp } from "@/services/getUserDevices";
 import { Telmask, pasteCallback } from "@/lib/telmask";
 import Link from "next/link";
+import "./style.css";
 
 export default function Form() {
   const searchParams = useSearchParams();
@@ -156,10 +157,7 @@ export default function Form() {
         required
       ></textarea>
 
-      <button
-        className="btn-yellow btn btn-form big-btn"
-        disabled={!buttonEnabled}
-      >
+      <button className="btn-yellow btn btn-form" disabled={!buttonEnabled}>
         Отправить сообщение
       </button>
       <div className="polit-descr contacts-btn">

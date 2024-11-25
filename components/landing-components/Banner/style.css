@@ -18,6 +18,7 @@
 
 .banner__block>div>button {
     margin-top: 90px;
+    font-size: 19px;
 }
 
 @media screen and (max-width: 1600px) {
@@ -57,6 +58,10 @@
         background-position: 0% 0%;
         height: 400px;
     }
+
+    .banner__block>div>button {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -70,8 +75,5 @@
 
     .banner__block>div>button {
         margin-top: 30px;
-        font-size: 14px;
-        padding: 5px 10px;
     }
-
 }

@@ -32,7 +32,7 @@
     }
 
     .forWhom__content>div>p {
-        margin-top: 70px;
+        margin-top: 50px;
     }
 }
 
@@ -51,6 +51,12 @@
     .forWhom__content {
         margin-left: 20px;
         width: 50%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .forWhom__content>div>p {
+        margin-top: 20px;
     }
 }
 

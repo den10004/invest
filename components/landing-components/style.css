@@ -17,12 +17,12 @@
     padding-top: 160px;
 }
 
-
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1620px) {
     .paddingblock {
-        padding-top: 100px;
+        padding-top: 80px;
     }
 }
+
 
 
 @media screen and (max-width: 1024px) {

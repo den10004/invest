@@ -123,18 +123,14 @@
 
 .block-style {
     font-size: 24px;
-    line-height: 1.2;
+    line-height: 1.5;
     text-align: left;
 }
-
-
 
 .block-style>span {
     font-size: 48px;
     white-space: nowrap;
 }
-
-
 
 @media screen and (max-width: 1400px) {
     .aboutUs__descr {
@@ -277,12 +273,6 @@
     .block-w>div:first-child {
         margin-top: 10px;
     }
-}
-
-@media screen and (max-width: 425px) {
-    .block-style>span {
-        font-size: 26px;
-    }
 
     .numbers-box__graph>.line>.point>.details>.views {
         font-size: 14px;
@@ -294,6 +284,26 @@
 
     .numbers-box__graph>.line>.point>.details>.views>span {
         font-size: 14px;
+    }
+
+    .numbers-box__graph>.line>.point>.details>.orders>span {
+        font-size: 14px;
+    }
+
+    .numbers-box__graph>.line>.point>.details>.views {
+        line-height: 0.9;
+    }
+
+    .numbers-box__graph>.line>.point>.details>.orders {
+        line-height: 0.9;
+    }
+
+
+}
+
+@media screen and (max-width: 425px) {
+    .block-style>span {
+        font-size: 26px;
     }
 
     .numbers-box__graph>.line>.point>.details>.orders>span {

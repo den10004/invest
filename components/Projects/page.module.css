@@ -235,6 +235,11 @@
         text-align: center;
         padding: 15px 20px;
     }
+
+    .item .params li {
+        padding: 10px;
+        font-size: 14px;
+    }
 }
 
 
