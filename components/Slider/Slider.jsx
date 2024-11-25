@@ -35,6 +35,7 @@ export default function Slider(images) {
             width={100}
             height={350}
             layout="responsive"
+            priority={true}
           />
         </SwiperSlide>
       ))}
