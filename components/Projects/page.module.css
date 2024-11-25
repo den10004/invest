@@ -96,10 +96,6 @@
     border-right: none;
 }
 
-
-
-
-
 @media screen and (max-width: 1620px) {
     .item .title {
         font-size: 26px;
