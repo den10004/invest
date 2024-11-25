@@ -27,45 +27,45 @@ export default function AboutUs() {
       <div className="aboutUs__graph">
         <div className="numbers-box__graph">
           <Image priority src={graph} alt="фон" className="" />
-          <div class="line">
-            <div class="point">
-              <div class="details">
-                <div class="views">
+          <div className="line">
+            <div className="point">
+              <div className="details">
+                <div className="views">
                   3 295 341
                   <br />
                   <span>просмотр</span>
                 </div>
-                <div class="orders">
+                <div className="orders">
                   7 720 <br />
                   <span>заявок</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="line">
-            <div class="point">
-              <div class="details">
-                <div class="views">
+          <div className="line">
+            <div className="point">
+              <div className="details">
+                <div className="views">
                   3 890 753
                   <br />
                   <span>просмотра</span>
                 </div>
-                <div class="orders">
+                <div className="orders">
                   8 214 <br />
                   <span>заявок</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="line">
-            <div class="point">
-              <div class="details">
-                <div class="views">
+          <div className="line">
+            <div className="point">
+              <div className="details">
+                <div className="views">
                   3 456 026
                   <br />
                   <span>просмотров</span>
                 </div>
-                <div class="orders">
+                <div className="orders">
                   10 122 <br />
                   <span>заявки</span>
                 </div>
