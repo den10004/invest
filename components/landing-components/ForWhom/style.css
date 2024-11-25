@@ -39,6 +39,17 @@
     }
 }
 
+
+
+@media screen and (max-width: 845px) {
+    .forWhom__img-container>img {
+        width: 725px;
+        height: 700px;
+    }
+}
+
+
+
 @media screen and (max-width: 845px) {
     .forWhom {
         flex-direction: column;

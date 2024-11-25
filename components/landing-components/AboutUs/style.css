@@ -14,6 +14,21 @@
     width: 100%;
 }
 
+.point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #5291f8;
+    border: 8px solid #fff;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / .25);
+    box-sizing: content-box;
+    position: absolute;
+    bottom: 288px;
+    left: 13.9%;
+}
+
+
+
 .aboutUs__descr {
     display: flex;
     margin-top: 100px;
@@ -90,6 +105,12 @@
     white-space: nowrap;
 }
 
+@media screen and (max-width: 1620px) {
+    .aboutUs__descr {
+        margin-bottom: 50px;
+    }
+}
+
 @media screen and (max-width: 1500px) {
     .count3 {
         top: 2%;
@@ -104,6 +125,11 @@
     .aboutUs__descr {
         margin-top: 45px;
     }
+
+    .block-style {
+        font-size: 20px;
+    }
+
 }
 
 
@@ -111,6 +137,13 @@
     .aboutUs__graph>img {
         height: 80%;
     }
+
+    .point {
+        bottom: 190px;
+    }
+
+
+
 
     .aboutUs__descr {
         margin-top: 50px;
@@ -137,7 +170,7 @@
     }
 
     .count3 {
-        top: -3%;
+        top: -9%;
         left: 72%;
     }
 }
@@ -163,6 +196,10 @@
 
     .aboutUs__descr {
         transform: scale(0.8);
+    }
+
+    .aboutUs__descr {
+        margin-bottom: 0px;
     }
 }
 
@@ -222,11 +259,36 @@
 
 }
 
-@media screen and (width <=565px) {
+
+@media screen and (max-width: 565px) {
+    .count1 {
+        top: -16px;
+    }
+
+    .count2 {
+        top: 0px;
+    }
+
     .count3 {
-        left: 63%;
+        left: 65%;
     }
 }
+
+
+@media screen and (max-width: 450px) {
+    .count1 {
+        top: -28px;
+    }
+
+    .count2 {
+        top: -14px;
+    }
+
+    .count3 {
+        top: -55px;
+    }
+}
+
 
 
 @media screen and (max-width: 425px) {

@@ -27,6 +27,8 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="aboutUs__graph">
+        <div className="point"></div>
+
         <div className="aboutUs__count count1">
           <div className="count__second">
             <div>
