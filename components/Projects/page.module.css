@@ -107,6 +107,15 @@
 }
 
 
+@media screen and (max-width: 1400px) {
+    .item .params {
+        font-size: 16px;
+    }
+
+    .button>button {
+        font-size: 16px !important;
+    }
+}
 
 @media screen and (max-width: 1280px) {
     .item {
@@ -114,9 +123,8 @@
         flex-direction: column;
     }
 
-    .item .params li {
-        border-right: 0px;
-        padding: 5px 10px;
+    .item .params {
+        font-size: 18px;
     }
 }
 
@@ -167,10 +175,6 @@
         font-size: 24px;
     }
 
-    .item .footer .params {
-        flex-direction: row;
-    }
-
     .item .description p {
         font-size: 14px;
     }
@@ -179,33 +183,66 @@
         font-size: 16px !important;
     }
 
+    .item .params {
+        font-size: 16px;
+
+    }
 }
 
 
-@media screen and (max-width: 490px) {
-    .item .footer .params {
+@media screen and (max-width: 660px) {
+    .item .footer {
         flex-direction: column;
+        width: 100%;
     }
 
+    .item .params {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 490px) {
     .item .title {
         line-height: 1.3;
     }
 
+    .item .footer .params {
+        flex-direction: row;
+        width: 100%;
+    }
 
+    .item .footer {
+        flex-direction: column;
 
-    .button>button {
+    }
+
+    .item .footer .button {
+        width: 100%;
+    }
+
+    .item .footer .button>button {
         width: 100%;
         text-align: center;
     }
-}
-
-@media screen and (max-width: 425px) {
 
     .item .footer .button .btn-yellow {
         width: 100%;
         text-align: center;
         padding: 15px 20px;
     }
+}
+
+
+@media screen and (max-width: 425px) {
+    .item .footer .params {
+        flex-direction: column;
+    }
+
+    .item .params li {
+        border-right: 0px;
+        padding: 5px 10px;
+    }
+
 }
 
 @media screen and (max-width: 373px) {
