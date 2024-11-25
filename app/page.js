@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Head></Head>
-      <section id="main" className="main main-bg">
+      <section id="main" className="main">
         <TheHeader />
         <div id="hero">
           <div className="container">
