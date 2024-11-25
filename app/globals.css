@@ -27,17 +27,25 @@ html {
 
 @font-face {
   font-family: 'Gilroy';
-  src: url('../font/Gilroy-Bold.ttf') format('truetype');
-  font-weight: bold;
+  src: url('../font/Gilroy-Medium.ttf') format('truetype');
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gilroy';
-  src: url('../font/Gilroy-Medium.ttf') format('truetype');
-  font-weight: 500;
+  src: url('../font/Gilroy-SemiBold.ttf') format('truetype');
+  font-weight: 600;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../font/Gilroy-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 body {
   background-color: var(--color-body);
