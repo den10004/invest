@@ -102,7 +102,7 @@
 
 @media screen and (max-width: 1620px) {
     .item .title {
-        font-size: 28px;
+        font-size: 26px;
     }
 }
 
@@ -181,6 +181,7 @@
 
     .button>button {
         font-size: 16px !important;
+        padding: 18px 10px !important;
     }
 
     .item .params {
@@ -198,6 +199,10 @@
 
     .item .params {
         width: 100%;
+    }
+
+    .item {
+        min-height: 500px;
     }
 }
 
@@ -246,10 +251,6 @@
 }
 
 @media screen and (max-width: 373px) {
-    .item {
-        height: 776px;
-    }
-
     .item .params {
         font-size: 18px;
     }

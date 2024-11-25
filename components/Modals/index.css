@@ -206,17 +206,6 @@ form fieldset.options .field input[type=radio] {
     display: none;
 }
 
-@media (max-width: 1620px) {
-    .btn {
-        padding: 13.5px 23.5px;
-    }
-}
-
-@media (max-width: 1410px) {
-    .btn {
-        padding: 13.5px 10px;
-    }
-}
 
 
 @media (max-width: 767px) {
