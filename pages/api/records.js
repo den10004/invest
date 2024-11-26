@@ -5,7 +5,9 @@ import PocketBase from "pocketbase";
 export default async function handler(req, res) {
   try {
     const pb = new PocketBase(process.env.DB_HOST);
-    await pb.admins.authWithPassword(process.env.DB_USER, process.env.DB_PASS);
+    const authData = await pb
+      .collection("users")
+      .authWithPassword(process.env.DB_USER, process.env.DB_PASS);
 
     const data = await pb.collection("catalogue").getList(0, 100, {
       expand: "project",

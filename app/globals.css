@@ -323,12 +323,17 @@ nav ul {
   }
 }
 
-@media (max-width: 1410px) {
+@media (max-width: 1350px) {
+  .btn {
+    padding: 18px 15px;
+  }
+}
+
+@media (max-width: 1280px) {
   .btn {
     padding: 18px 27px;
   }
 }
-
 
 a.hover-underline {
   position: relative;

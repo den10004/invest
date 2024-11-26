@@ -118,10 +118,22 @@
     }
 }
 
+@media screen and (max-width: 1315px) {
+
+    .button>button {
+        font-size: 13px !important;
+    }
+}
+
+
 @media screen and (max-width: 1280px) {
     .item {
         display: flex;
         flex-direction: column;
+    }
+
+    .button>button {
+        font-size: 16px !important;
     }
 
     .item .params {
@@ -192,7 +204,7 @@
 }
 
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 675px) {
     .item .footer {
         flex-direction: column;
         width: 100%;

@@ -61,6 +61,11 @@ form.custom-form.modal-form {
     padding: 39px 50px;
 }
 
+.modal-info {
+    padding: 39px 50px;
+}
+
+
 .modal-title {
     font-weight: 500;
     font-size: 28px;
@@ -239,6 +244,11 @@ form fieldset.options .field input[type=radio] {
     form.custom-form.modal-form {
         padding: 17px 24px;
     }
+
+    .modal-info {
+        padding: 17px 24px;
+    }
+
 
     form.custom-form input,
     form.custom-form textarea,

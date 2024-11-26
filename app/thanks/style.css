@@ -22,11 +22,12 @@
 
 .page-headline {
     white-space: pre-line;
-    font-size: 95px;
+    font-size: 90px;
     font-weight: 900;
     line-height: 139%;
-    text-align: center;
+    text-align: left;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 
