@@ -4,6 +4,7 @@ import { Telmask, pasteCallback } from "@/lib/telmask";
 import { DetectOS, GetBrowser, GetUserIp } from "@/services/getUserDevices";
 import Link from "next/link";
 import "./index.css";
+import { gmt } from "@/lib/gmt";
 
 export default function RequestModal({ setShowModal, type }) {
   const searchParams = useSearchParams();
@@ -77,6 +78,8 @@ export default function RequestModal({ setShowModal, type }) {
     }
   }, [searchParams]);
 
+  console.log(gmt);
+
   async function Record(event) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -90,7 +93,8 @@ export default function RequestModal({ setShowModal, type }) {
     formData.append("platform", DetectOS());
     formData.append("browser", GetBrowser());
     formData.append("ip", ip);
-    formData.set("phone", formData.get("phone").replace(/[- )(]/g, ""));
+    formData.set("phone", formData.get("phone").replace(/[- )+(]/g, ""));
+    formData.append("gmt", gmt);
 
     let formObject = {};
     formData.forEach(function (value, key) {

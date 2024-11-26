@@ -1,5 +1,6 @@
 import "./globals.css";
 import TheFooter from "@/components/TheFooter/TheFooter";
+import YandexMetrikaContainer from "@/lib/yandexMetrika";
 import Head from "next/head";
 
 export default function RootLayout({ children }) {
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       <body>
         <main>{children}</main>
         <TheFooter />
+        <YandexMetrikaContainer />
       </body>
     </html>
   );

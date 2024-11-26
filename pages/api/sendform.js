@@ -7,6 +7,7 @@ export default async function handle(req, res) {
       .collection("users")
       .authWithPassword(process.env.DB_USER, process.env.DB_PASS);
     const formData = req.body;
+    console.log(formData);
     const data = await pb.collection("orders").create(formData);
     res.status(200).json({ result: 1 });
   } catch (error) {
