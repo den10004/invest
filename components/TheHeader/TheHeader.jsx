@@ -65,7 +65,11 @@ export default function TheHeader() {
         </button>
       </div>
       {showModal && (
-        <RequestModal setShowModal={setShowModal} showModal={showModal} />
+        <RequestModal
+          setShowModal={setShowModal}
+          showModal={showModal}
+          type={"sendProject"}
+        />
       )}
     </header>
   );

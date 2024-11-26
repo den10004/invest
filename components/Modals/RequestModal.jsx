@@ -5,7 +5,7 @@ import { DetectOS, GetBrowser, GetUserIp } from "@/services/getUserDevices";
 import Link from "next/link";
 import "./index.css";
 
-export default function RequestModal({ setShowModal }) {
+export default function RequestModal({ setShowModal, type }) {
   const searchParams = useSearchParams();
   const [ip, setIp] = useState();
   const [utmParams, setUtmParams] = useState(null);
@@ -130,9 +130,17 @@ export default function RequestModal({ setShowModal }) {
             className="custom-form modal-form ajax_form"
             onSubmit={Record}
           >
-            <div className="modal-title">
-              Отправьте заявку на размещение проекта
-            </div>
+            {type === "sendPresentation" && (
+              <div className="modal-title">
+                Отправьте заявку на получение презентации
+              </div>
+            )}
+
+            {type === "sendProject" && (
+              <div className="modal-title">
+                Отправьте заявку на размещение проекта
+              </div>
+            )}
 
             <div className="input-box">
               <input

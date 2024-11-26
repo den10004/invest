@@ -39,7 +39,11 @@ export default function Industries() {
           Найти инвесторов
         </button>
         {showModal && (
-          <RequestModal setShowModal={setShowModal} showModal={showModal} />
+          <RequestModal
+            setShowModal={setShowModal}
+            showModal={showModal}
+            type={"sendProject"}
+          />
         )}
       </div>
     </section>

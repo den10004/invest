@@ -31,7 +31,11 @@ export default function InvestContent() {
         </div>
       </section>
       {showModal && (
-        <RequestModal setShowModal={setShowModal} showModal={showModal} />
+        <RequestModal
+          setShowModal={setShowModal}
+          showModal={showModal}
+          type={"sendPresentation"}
+        />
       )}
     </>
   );

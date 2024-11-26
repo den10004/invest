@@ -24,7 +24,11 @@ export default function Banner() {
         </div>
       </div>
       {showModal && (
-        <RequestModal setShowModal={setShowModal} showModal={showModal} />
+        <RequestModal
+          setShowModal={setShowModal}
+          showModal={showModal}
+          type={"sendProject"}
+        />
       )}
     </section>
   );
